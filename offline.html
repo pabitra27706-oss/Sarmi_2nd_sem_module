@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10b981">
+  <title>Offline — B.Tech Module System</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, sans-serif;
+      background: #f0fdf4;
+      color: #1f2937;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    
+    .container {
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+    }
+    
+    .icon-wrapper {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #10b981;
+      margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+      color: #6b7280;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid #d1fae5;
+      text-align: left;
+    }
+    
+    .card h2 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+    
+    .feature-list {
+      list-style: none;
+    }
+    
+    .feature-list li {
+      padding: 0.3rem 0;
+      color: #4b5563;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.3rem;
+      border-radius: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    
+    .btn-primary {
+      background: #10b981;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #059669;
+      transform: translateY(-1px);
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: #10b981;
+      border: 2px solid #10b981;
+    }
+    
+    .btn-secondary:hover {
+      background: #f0fdf4;
+    }
+    
+    .status-bar {
+      margin-top: 1.25rem;
+      padding: 0.6rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .status-offline {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fcd34d;
+    }
+    
+    .status-online {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #6ee7b7;
+    }
+    
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .subject-link {
+      background: #f0fdf4;
+      border: 1px solid #d1fae5;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      text-decoration: none;
+      color: #065f46;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    
+    .subject-link:hover {
+      background: #d1fae5;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="container">
+    
+    <!-- SVG Icon - No files needed -->
+    <div class="icon-wrapper">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="60" r="56" fill="#d1fae5" stroke="#10b981" stroke-width="3" />
+        <rect x="30" y="35" width="60" height="50" rx="4" fill="#10b981" opacity="0.9" />
+        <rect x="35" y="40" width="50" height="40" rx="2" fill="white" />
+        <line x1="40" y1="50" x2="75" y2="50" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" />
+        <line x1="40" y1="57" x2="70" y2="57" stroke="#d1fae5" stroke-width="2" stroke-linecap="round" />
+        <line x1="40" y1="64" x2="65" y2="64" stroke="#d1fae5" stroke-width="2" stroke-linecap="round" />
+        <line x1="40" y1="71" x2="60" y2="71" stroke="#d1fae5" stroke-width="2" stroke-linecap="round" />
+        <circle cx="85" cy="85" r="18" fill="#f59e0b" stroke="white" stroke-width="3" />
+        <text x="85" y="91" text-anchor="middle" font-size="20" font-weight="bold" fill="white">!</text>
+      </svg>
+    </div>
+    
+    <h1>You're Offline</h1>
+    <p class="subtitle">
+      No internet connection found.<br>
+      Your cached content is still available!
+    </p>
+    
+    <div class="card">
+      <h2>✅ Available Offline</h2>
+      <ul class="feature-list">
+        <li>📖 All previously loaded modules</li>
+        <li>💾 Your saved progress & bookmarks</li>
+        <li>🌙 Dark / Light theme</li>
+        <li>📱 Full app functionality</li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <h2>📚 Try Cached Subjects</h2>
+      <div class="subjects-grid">
+        <a href="./subjects/physics-i/index.html" class="subject-link">⚛️ Physics</a>
+        <a href="./subjects/mathematics-ii/index.html" class="subject-link">📐 Maths</a>
+        <a href="./subjects/electrical-electronics/index.html" class="subject-link">⚡ EE</a>
+      </div>
+    </div>
+    
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="tryReload()">
+        🔄 Try Again
+      </button>
+      <a href="./index.html" class="btn btn-secondary">
+        🏠 Home
+      </a>
+    </div>
+    
+    <div class="status-bar status-offline" id="statusBar">
+      🔴 Currently Offline
+    </div>
+  </div>
+  
+  <script>
+    function updateStatus() {
+      const bar = document.getElementById('statusBar');
+      if (navigator.onLine) {
+        bar.className = 'status-bar status-online';
+        bar.textContent = '🟢 Back Online! Redirecting...';
+        setTimeout(() => window.location.reload(), 1500);
+      } else {
+        bar.className = 'status-bar status-offline';
+        bar.textContent = '🔴 Currently Offline';
+      }
+    }
+    
+    function tryReload() {
+      if (navigator.onLine) {
+        window.location.reload();
+      } else {
+        const bar = document.getElementById('statusBar');
+        bar.textContent = '🔴 Still offline — try again later';
+        bar.style.animation = 'none';
+        setTimeout(() => { bar.style.animation = ''; }, 10);
+      }
+    }
+    
+    window.addEventListener('online', updateStatus);
+    window.addEventListener('offline', updateStatus);
+    updateStatus();
+  </script>
+  
+</body>
+
+</html>
