@@ -1,0 +1,233 @@
+{
+    "moduleNumber": 1,
+    "title": "Ordinary Differential Equations",
+    "description": "Study of exact equations, integrating factors, linear and non-linear ODEs, Bernoulli's and Clairaut's equations, second order ODEs with constant coefficients",
+    "totalMarks": 20,
+    "topics": [
+        {
+            "id": "ode_def_1",
+            "type": "definition",
+            "difficulty": "easy",
+            "title": "Ordinary Differential Equation",
+            "description": "Define an ordinary differential equation and state its order and degree.",
+            "content": "<p><strong>Ordinary Differential Equation (ODE):</strong> An equation involving derivatives of a dependent variable with respect to a single independent variable is called an ODE.</p><p><strong>Order:</strong> The order of the highest derivative present. <strong>Degree:</strong> The power of the highest order derivative (when the equation is free from radicals and fractions in derivatives).</p><p>Example: $\\frac{d^2y}{dx^2} + 3\\frac{dy}{dx} + 2y = 0$ has order 2 and degree 1.</p>",
+            "keyPoints": [
+                "Single independent variable",
+                "Order = highest derivative order",
+                "Degree = power of highest order derivative"
+            ],
+            "marks": 2,
+            "unit": "ODE Basics"
+        },
+        {
+            "id": "ode_def_2",
+            "type": "definition",
+            "difficulty": "easy",
+            "title": "Exact Differential Equation",
+            "description": "Define an exact differential equation with condition.",
+            "content": "<p><strong>Exact Differential Equation:</strong> A differential equation $M(x,y)dx + N(x,y)dy = 0$ is exact if there exists a function $F(x,y)$ such that $dF = Mdx + Ndy$.</p><p><strong>Condition for exactness:</strong> $$\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$$</p>",
+            "keyPoints": [
+                "Form: M dx + N dy = 0",
+                "Condition: ∂M/∂y = ∂N/∂x",
+                "Solution: Find F(x,y) = C"
+            ],
+            "marks": 2,
+            "unit": "Exact Equations"
+        },
+        {
+            "id": "ode_theory_1",
+            "type": "theory",
+            "difficulty": "medium",
+            "title": "Solving Exact Differential Equations",
+            "description": "Explain the method to solve an exact differential equation.",
+            "content": "<h5>Method to Solve Exact ODE</h5><p>Given $M\\,dx + N\\,dy = 0$ where $\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$:</p><p><strong>Step 1:</strong> Verify exactness by checking $\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$</p><p><strong>Step 2:</strong> Find $F(x,y)$ by integrating:</p><p>$$F = \\int M\\,dx \\text{ (treating y as constant)} + g(y)$$</p><p><strong>Step 3:</strong> Determine $g(y)$ by differentiating $F$ partially w.r.t. $y$ and comparing with $N$:</p><p>$$\\frac{\\partial F}{\\partial y} = N \\implies g'(y) = N - \\frac{\\partial}{\\partial y}\\int M\\,dx$$</p><p><strong>Step 4:</strong> Integrate $g'(y)$ to find $g(y)$</p><p><strong>Step 5:</strong> Solution is $F(x,y) = C$</p>",
+            "keyPoints": [
+                "Always verify exactness first",
+                "Integrate M w.r.t. x (y constant)",
+                "Find g(y) by comparing with N",
+                "Solution: F(x,y) = constant"
+            ],
+            "marks": 5,
+            "unit": "Exact Equations"
+        },
+        {
+            "id": "ode_num_1",
+            "type": "numerical",
+            "difficulty": "medium",
+            "title": "Exact Equation - Solved Example",
+            "description": "Solve the exact differential equation: (2xy + 3)dx + (x² + 4y)dy = 0",
+            "content": "<h5>Problem</h5><p>Solve: $(2xy + 3)dx + (x^2 + 4y)dy = 0$</p><h5>Solution</h5><p><strong>Step 1:</strong> Identify $M = 2xy + 3$ and $N = x^2 + 4y$</p><p><strong>Step 2:</strong> Check exactness:</p><p>$$\\frac{\\partial M}{\\partial y} = 2x, \\quad \\frac{\\partial N}{\\partial x} = 2x$$</p><p>Since $\\frac{\\partial M}{\\partial y} = \\frac{\\partial N}{\\partial x}$, the equation is exact. ✓</p><p><strong>Step 3:</strong> Integrate $M$ w.r.t. $x$:</p><p>$$F = \\int (2xy + 3)\\,dx = x^2y + 3x + g(y)$$</p><p><strong>Step 4:</strong> Find $g(y)$:</p><p>$$\\frac{\\partial F}{\\partial y} = x^2 + g'(y) = N = x^2 + 4y$$</p><p>$$g'(y) = 4y \\implies g(y) = 2y^2$$</p><p><strong>Step 5:</strong> Solution:</p><p>$$\\boxed{x^2y + 3x + 2y^2 = C}$$</p>",
+            "keyPoints": [
+                "Verify ∂M/∂y = ∂N/∂x first",
+                "Integrate M w.r.t. x",
+                "Determine g(y) from N",
+                "Final answer: F(x,y) = C"
+            ],
+            "marks": 4,
+            "unit": "Exact Equations"
+        },
+        {
+            "id": "ode_def_3",
+            "type": "definition",
+            "difficulty": "easy",
+            "title": "Integrating Factor",
+            "description": "Define integrating factor for a differential equation.",
+            "content": "<p><strong>Integrating Factor (IF):</strong> A function $\\mu(x,y)$ which, when multiplied to a non-exact equation $M\\,dx + N\\,dy = 0$, makes it exact is called an integrating factor.</p><p>After multiplication: $\\mu M\\,dx + \\mu N\\,dy = 0$ becomes exact.</p><p>For linear ODE $\\frac{dy}{dx} + Py = Q$, the IF is: $$\\mu = e^{\\int P\\,dx}$$</p>",
+            "keyPoints": [
+                "Makes non-exact equation exact",
+                "For linear ODE: IF = e^(∫P dx)",
+                "Multiply entire equation by IF"
+            ],
+            "marks": 2,
+            "unit": "Integrating Factors"
+        },
+        {
+            "id": "ode_theory_2",
+            "type": "theory",
+            "difficulty": "medium",
+            "title": "Bernoulli's Equation",
+            "description": "Explain Bernoulli's equation and its method of solution.",
+            "content": "<h5>Bernoulli's Equation</h5><p><strong>Standard Form:</strong> $$\\frac{dy}{dx} + Py = Qy^n$$ where $P$ and $Q$ are functions of $x$, and $n \\neq 0, 1$.</p><p><strong>Method of Solution:</strong></p><p><strong>Step 1:</strong> Divide by $y^n$: $$y^{-n}\\frac{dy}{dx} + Py^{1-n} = Q$$</p><p><strong>Step 2:</strong> Substitute $v = y^{1-n}$, so $\\frac{dv}{dx} = (1-n)y^{-n}\\frac{dy}{dx}$</p><p><strong>Step 3:</strong> Equation becomes linear in $v$: $$\\frac{dv}{dx} + (1-n)Pv = (1-n)Q$$</p><p><strong>Step 4:</strong> Solve using integrating factor: $IF = e^{\\int (1-n)P\\,dx}$</p>",
+            "keyPoints": [
+                "Form: dy/dx + Py = Qy^n",
+                "Substitute v = y^(1-n)",
+                "Reduces to linear ODE",
+                "Solve using IF method"
+            ],
+            "marks": 5,
+            "unit": "Bernoulli's Equation"
+        },
+        {
+            "id": "ode_theory_3",
+            "type": "theory",
+            "difficulty": "medium",
+            "title": "Clairaut's Equation",
+            "description": "Explain Clairaut's equation, its general and singular solutions.",
+            "content": "<h5>Clairaut's Equation</h5><p><strong>Form:</strong> $y = xp + f(p)$ where $p = \\frac{dy}{dx}$</p><p><strong>Method:</strong></p><p><strong>Step 1:</strong> Differentiate w.r.t. $x$:</p><p>$$p = p + [x + f'(p)]\\frac{dp}{dx}$$</p><p>$$[x + f'(p)]\\frac{dp}{dx} = 0$$</p><p><strong>Case 1:</strong> $\\frac{dp}{dx} = 0 \\implies p = c$ (constant)</p><p><strong>General Solution:</strong> $y = cx + f(c)$ (family of straight lines)</p><p><strong>Case 2:</strong> $x + f'(p) = 0$ gives the <strong>Singular Solution</strong> (envelope of the family).</p>",
+            "keyPoints": [
+                "Form: y = xp + f(p)",
+                "General solution: y = cx + f(c)",
+                "Singular solution: from x + f'(p) = 0",
+                "Singular solution is envelope"
+            ],
+            "marks": 5,
+            "unit": "Clairaut's Equation"
+        },
+        {
+            "id": "ode_deriv_1",
+            "type": "derivation",
+            "difficulty": "hard",
+            "title": "Complementary Function for Second Order ODE",
+            "description": "Derive the complementary function for a second order linear ODE with constant coefficients.",
+            "content": "<h5>Second Order ODE with Constant Coefficients</h5><p><strong>Standard Form:</strong> $a\\frac{d^2y}{dx^2} + b\\frac{dy}{dx} + cy = 0$</p><p><strong>Auxiliary Equation:</strong> Assume $y = e^{mx}$, substituting:</p><p>$$am^2 + bm + c = 0$$</p><p><strong>Case 1: Distinct Real Roots</strong> ($m_1 \\neq m_2$)</p><p>$$y_{CF} = C_1 e^{m_1 x} + C_2 e^{m_2 x}$$</p><p><strong>Case 2: Equal Roots</strong> ($m_1 = m_2 = m$)</p><p>$$y_{CF} = (C_1 + C_2 x)e^{mx}$$</p><p><strong>Case 3: Complex Roots</strong> ($m = \\alpha \\pm i\\beta$)</p><p>$$y_{CF} = e^{\\alpha x}(C_1 \\cos\\beta x + C_2 \\sin\\beta x)$$</p><p><strong>Example:</strong> $y'' - 5y' + 6y = 0$</p><p>AE: $m^2 - 5m + 6 = 0 \\implies (m-2)(m-3) = 0$</p><p>$m = 2, 3$ (distinct real roots)</p><p>$$y_{CF} = C_1 e^{2x} + C_2 e^{3x}$$</p>",
+            "keyPoints": [
+                "Form auxiliary equation am² + bm + c = 0",
+                "Three cases based on discriminant",
+                "Distinct roots: C₁e^(m₁x) + C₂e^(m₂x)",
+                "Equal roots: (C₁ + C₂x)e^(mx)",
+                "Complex roots: e^(αx)(C₁cosβx + C₂sinβx)"
+            ],
+            "marks": 10,
+            "unit": "Second Order ODE"
+        },
+        {
+            "id": "ode_theory_4",
+            "type": "theory",
+            "difficulty": "hard",
+            "title": "D-Operator Method for Particular Integral",
+            "description": "Explain the D-operator method to find particular integrals.",
+            "content": "<h5>D-Operator Method</h5><p>Let $D = \\frac{d}{dx}$. The ODE $f(D)y = Q(x)$ has:</p><p>$$y_{PI} = \\frac{1}{f(D)}Q(x)$$</p><p><strong>Rule 1:</strong> When $Q(x) = e^{ax}$: $$\\frac{1}{f(D)}e^{ax} = \\frac{e^{ax}}{f(a)}$$ (if $f(a) \\neq 0$)</p><p><strong>Rule 2:</strong> When $Q(x) = \\sin ax$ or $\\cos ax$: $$\\frac{1}{f(D^2)}\\sin ax = \\frac{\\sin ax}{f(-a^2)}$$</p><p><strong>Rule 3:</strong> When $Q(x) = x^n$: Expand $\\frac{1}{f(D)}$ in ascending powers of $D$ and operate on $x^n$.</p><p><strong>Rule 4:</strong> When $Q(x) = e^{ax}V(x)$: $$\\frac{1}{f(D)}e^{ax}V = e^{ax}\\frac{1}{f(D+a)}V$$</p>",
+            "keyPoints": [
+                "D = d/dx operator",
+                "PI = (1/f(D))Q(x)",
+                "Replace D² by -a² for trig functions",
+                "Replace D by a for exponentials",
+                "Shift theorem for e^ax × V(x)"
+            ],
+            "marks": 5,
+            "unit": "D-Operator Method"
+        },
+        {
+            "id": "ode_mcq_1",
+            "type": "mcq",
+            "difficulty": "easy",
+            "title": "ODE Order and Degree",
+            "question": "What is the order and degree of the differential equation $\\left(\\frac{d^2y}{dx^2}\\right)^3 + \\frac{dy}{dx} = x$?",
+            "options": [
+                "Order 2, Degree 3",
+                "Order 3, Degree 2",
+                "Order 2, Degree 1",
+                "Order 1, Degree 3"
+            ],
+            "correct": 0,
+            "explanation": "<p><strong>Order 2, Degree 3</strong> is correct. The highest derivative is $\\frac{d^2y}{dx^2}$ (order 2), and it is raised to power 3 (degree 3).</p>",
+            "marks": 2,
+            "unit": "ODE Basics"
+        },
+        {
+            "id": "ode_mcq_2",
+            "type": "mcq",
+            "difficulty": "medium",
+            "title": "Integrating Factor MCQ",
+            "question": "The integrating factor of $\\frac{dy}{dx} + \\frac{2}{x}y = x^2$ is:",
+            "options": [
+                "$e^{2x}$",
+                "$x^2$",
+                "$e^{x^2}$",
+                "$\\frac{1}{x^2}$"
+            ],
+            "correct": 1,
+            "explanation": "<p><strong>$x^2$</strong> is correct. Here $P = \\frac{2}{x}$. IF $= e^{\\int P\\,dx} = e^{\\int \\frac{2}{x}dx} = e^{2\\ln x} = e^{\\ln x^2} = x^2$.</p>",
+            "marks": 2,
+            "unit": "Integrating Factors"
+        },
+        {
+            "id": "ode_num_2",
+            "type": "numerical",
+            "difficulty": "medium",
+            "title": "Linear ODE Problem",
+            "description": "Solve the linear ODE using integrating factor method.",
+            "content": "<h5>Problem</h5><p>Solve: $\\frac{dy}{dx} + y = e^{-x}$</p><h5>Solution</h5><p><strong>Step 1:</strong> Identify $P = 1$, $Q = e^{-x}$</p><p><strong>Step 2:</strong> Find IF: $\\mu = e^{\\int 1\\,dx} = e^x$</p><p><strong>Step 3:</strong> Multiply both sides by IF:</p><p>$$e^x\\frac{dy}{dx} + e^x y = e^x \\cdot e^{-x}$$</p><p>$$\\frac{d}{dx}(ye^x) = 1$$</p><p><strong>Step 4:</strong> Integrate both sides:</p><p>$$ye^x = \\int 1\\,dx = x + C$$</p><p><strong>Step 5:</strong> Solution:</p><p>$$\\boxed{y = (x + C)e^{-x}}$$</p>",
+            "keyPoints": [
+                "Identify P and Q",
+                "IF = e^(∫P dx)",
+                "Multiply and recognize d/dx(y × IF)",
+                "Integrate both sides"
+            ],
+            "marks": 4,
+            "unit": "Linear ODE"
+        },
+        {
+            "id": "ode_theory_5",
+            "type": "theory",
+            "difficulty": "hard",
+            "title": "Variation of Parameters",
+            "description": "Explain the method of variation of parameters for finding particular integral.",
+            "content": "<h5>Method of Variation of Parameters</h5><p><strong>For:</strong> $y'' + P(x)y' + Q(x)y = R(x)$</p><p>If $y_1$ and $y_2$ are solutions of the homogeneous equation, then:</p><p>$$y_{PI} = -y_1\\int\\frac{y_2 R}{W}dx + y_2\\int\\frac{y_1 R}{W}dx$$</p><p>where $W$ is the <strong>Wronskian</strong>:</p><p>$$W = \\begin{vmatrix} y_1 & y_2 \\\\ y_1' & y_2' \\end{vmatrix} = y_1 y_2' - y_2 y_1'$$</p><p><strong>Steps:</strong></p><ol><li>Find CF: $y_1$ and $y_2$</li><li>Calculate Wronskian $W$</li><li>Apply the formula</li><li>Complete solution: $y = CF + PI$</li></ol>",
+            "keyPoints": [
+                "Works for variable coefficient ODEs too",
+                "Need two independent solutions y₁, y₂",
+                "Wronskian must be non-zero",
+                "PI = -y₁∫(y₂R/W)dx + y₂∫(y₁R/W)dx"
+            ],
+            "marks": 5,
+            "unit": "Variation of Parameters"
+        },
+        {
+            "id": "ode_def_4",
+            "type": "definition",
+            "difficulty": "medium",
+            "title": "Cauchy-Euler Equation",
+            "description": "Define Cauchy-Euler equation and state its standard substitution.",
+            "content": "<p><strong>Cauchy-Euler Equation</strong> (or Euler's equation) has the form:</p><p>$$x^2\\frac{d^2y}{dx^2} + x\\frac{dy}{dx} + y = f(x)$$</p><p>More generally: $a_n x^n y^{(n)} + a_{n-1} x^{n-1} y^{(n-1)} + \\cdots + a_0 y = g(x)$</p><p><strong>Substitution:</strong> Let $x = e^t$ (i.e., $t = \\ln x$), which transforms it into a linear ODE with constant coefficients.</p><p><strong>Key relations:</strong> $x\\frac{dy}{dx} = Dy$ and $x^2\\frac{d^2y}{dx^2} = D(D-1)y$ where $D = \\frac{d}{dt}$.</p>",
+            "keyPoints": [
+                "Coefficients are powers of x",
+                "Substitute x = eᵗ",
+                "Converts to constant coefficient ODE",
+                "x(dy/dx) = Dy, x²(d²y/dx²) = D(D-1)y"
+            ],
+            "marks": 2,
+            "unit": "Cauchy-Euler Equations"
+        }
+    ]
+}

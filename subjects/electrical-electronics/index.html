@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f59e0b">
+    <meta name="description" content="Basic Electrical & Electronics Engineering - B.Tech 2nd Semester - WBSCTE/MAKAUT">
+    
+    <title>Basic Electrical & Electronics Engineering - B.Tech 2nd Semester</title>
+    
+    <!-- Favicon - Electrical Icon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    
+    <!-- Module System Styles -->
+    <link rel="stylesheet" href="../../module-assets/css/module-style.css">
+    
+    <!-- MathJax for Circuit Equations -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                tags: 'ams'
+            },
+            svg: { 
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+
+    <!-- App Container -->
+    <div id="module-root"></div>
+
+    <!-- Module Configuration -->
+    <script>
+        const MODULE_CONFIG = {
+            // ==========================================
+            // SUBJECT INFORMATION
+            // ==========================================
+            subject: "Basic Electrical & Electronics Engineering",
+            code: "electrical-electronics",
+            subjectCode: "ES-EE 201",
+            
+            // ==========================================
+            // UNIVERSITY INFORMATION
+            // ==========================================
+            university: "WBSCTE",
+            course: "B.Tech",
+            branch: "All Branches (Non-EE/ECE)",
+            year: 1,
+            semester: 2,
+            
+            // ==========================================
+            // MODULE CONFIGURATION
+            // ==========================================
+            modules: [1, 2, 3, 4, 5, 6, 7],
+            dataPath: "./data/",
+            
+            // ==========================================
+            // FEATURE FLAGS
+            // ==========================================
+            hasPYQ: true,
+            hasNotes: true,
+            hasVideos: true,
+            
+            // ==========================================
+            // MODULE DETAILS (Optional - for reference)
+            // ==========================================
+            moduleInfo: {
+                1: {
+                    name: "Electromagnetism",
+                    topics: "Magnetic circuits, Faraday's law, Self & mutual inductance, Hysteresis & Eddy current losses, B-H loop",
+                    marks: 12,
+                    hasLab: true
+                },
+                2: {
+                    name: "Circuit Analysis",
+                    topics: "Kirchhoff's law, Nodal analysis, Mesh analysis, Superposition theorem, Thevenin's theorem, Norton's theorem, AC fundamentals, Waveforms, RMS values, Phasor representation, Power factor",
+                    marks: 20,
+                    hasLab: true,
+                    numericalFocus: true
+                },
+                3: {
+                    name: "Transformers",
+                    topics: "Single phase transformer (Core & Shell type), EMF equation, Phasor diagram, Equivalent circuit, Losses, Open & short circuit tests, Regulation & efficiency, Auto-transformer",
+                    marks: 15,
+                    hasLab: true,
+                    numericalFocus: true
+                },
+                4: {
+                    name: "Electrical Machines",
+                    topics: "DC Machine (Construction, Working, Torque-speed, Speed control), Three-phase induction motor, Rotating magnetic fields, Torque-slip characteristic, Single phase induction motor, Synchronous generators",
+                    marks: 18,
+                    hasLab: true
+                },
+                5: {
+                    name: "Transistors (BJT)",
+                    topics: "Transistor Biasing, Stability factor, CE/CB/CC configurations, Small signal low frequency operation, h-parameters, Transistor as amplifier, Voltage/Current gain, Frequency response",
+                    marks: 15,
+                    hasLab: true,
+                    numericalFocus: true
+                },
+                6: {
+                    name: "Field Effect Transistor",
+                    topics: "JFET construction & characteristics, Transfer characteristics, MOSFET (Depletion & Enhancement type), CS/CG/CD configurations",
+                    marks: 12,
+                    hasLab: true
+                },
+                7: {
+                    name: "Operational Amplifier",
+                    topics: "Virtual earth concept, Inverting & Non-inverting mode, Voltage summing, Difference amplifier, Constant gain multiplier, Voltage follower, Comparator, Integrator, Differentiator",
+                    marks: 15,
+                    hasLab: true,
+                    numericalFocus: true
+                }
+            }
+        };
+    </script>
+
+    <!-- Module System Scripts -->
+    <script src="../../module-assets/js/module-helpers.js"></script>
+    <script src="../../module-assets/js/module-storage.js"></script>
+    <script src="../../module-assets/js/module-render.js"></script>
+    <script src="../../module-assets/js/module-app.js"></script>
+
+</body>
+</html>

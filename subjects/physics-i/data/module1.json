@@ -1,0 +1,524 @@
+{
+  "moduleNumber": 2,
+  "moduleName": "Optics & Lasers",
+  "subject": "Physics-I",
+  "subjectCode": "BS-PH 201",
+  "university": "WBSCTE/MAKAUT",
+  "semester": 2,
+  "jsonType": "practice",
+  "totalQuestions": 19,
+  "topics": [
+    {
+      "id": "opt_q1a",
+      "questionNumber": 1,
+      "part": "a",
+      "isMultipart": true,
+      "parentTitle": "Single Slit Diffraction Intensity and Missing Orders",
+      "type": "derivation",
+      "difficulty": "hard",
+      "title": "Intensity Pattern for Single Slit Diffraction",
+      "unit": "Diffraction",
+      "marks": 6,
+      "question": "Find out the expression for intensity pattern for single slit diffraction. Find out the maxima and minima condition. Show the intensity pattern graphically.",
+      "answer": "<h5>Intensity Pattern for Single Slit Diffraction</h5><p><em>Consider a plane wavefront incident normally on a slit of width 'a'. According to Huygens' principle, every point in the slit acts as a secondary source.</em></p><p><strong>Step 1: Path Difference and Phase Difference</strong><br>Let parallel rays diffract at an angle \\(\\theta\\). The path difference between rays from the top edge and the bottom edge is \\(a\\sin\\theta\\).<br>Total phase difference: \\(\\phi = \\frac{2\\pi}{\\lambda} a \\sin\\theta\\).</p><p><strong>Step 2: Resultant Amplitude (Phasor Method)</strong><br>Let the slit be divided into \\(N\\) narrow strips. The phase difference between waves from adjacent strips is \\(d\\phi = \\frac{\\phi}{N}\\).<br>Using the polygon method, the resultant amplitude \\(A\\) is the chord of an arc of total angle \\(\\phi\\).<br>Let \\(\\beta = \\frac{\\phi}{2} = \\frac{\\pi a \\sin\\theta}{\\lambda}\\).<br>\\(A = A_0 \\frac{\\sin\\beta}{\\beta}\\), where \\(A_0\\) is the amplitude at \\(\\theta = 0\\).</p><p><strong>Step 3: Intensity Expression</strong><br>Since Intensity \\(I \\propto A^2\\):<br>$$I = I_0 \\left( \\frac{\\sin\\beta}{\\beta} \\right)^2$$<br>where \\(I_0\\) is the intensity of the central maximum.</p><p><strong>Step 4: Condition for Minima</strong><br>Intensity is zero when \\(\\sin\\beta = 0\\) but \\(\\beta \\neq 0\\).<br>$$\\beta = \\pm m\\pi \\implies \\frac{\\pi a \\sin\\theta}{\\lambda} = \\pm m\\pi$$<br>$$\\boxed{a \\sin\\theta = \\pm m\\lambda \\quad (m=1,2,3,...)}$$</p><p><strong>Step 5: Condition for Secondary Maxima</strong><br>Differentiating \\(I\\) w.r.t \\(\\beta\\) and setting to zero gives \\(\\tan\\beta = \\beta\\).<br>Solutions are approximately \\(\\beta = \\pm \\frac{3\\pi}{2}, \\pm \\frac{5\\pi}{2}, ...\\)<br>$$\\boxed{a \\sin\\theta \\approx \\pm \\frac{3\\lambda}{2}, \\pm \\frac{5\\lambda}{2}, ...}$$</p><p><strong>Step 6: Graphical Representation</strong><br>The graph of \\(I/I_0\\) vs \\(\\beta\\) shows a sharp central peak at \\(\\beta=0\\) containing most of the energy. The secondary maxima decrease rapidly in intensity: \\(I_1 \\approx 0.047 I_0, I_2 \\approx 0.016 I_0\\). The curve is symmetric about the center.</p>",
+      "keyPoints": [
+        "Half phase difference: β = (π a sinθ)/λ",
+        "Intensity formula: I = I₀ (sinβ/β)²",
+        "Minima condition: a sinθ = mλ (m = ±1, ±2, ...)",
+        "Maxima condition: tanβ = β (approx a sinθ = 3λ/2, 5λ/2, ...)",
+        "Central maximum is brightest and twice as wide as other maxima."
+      ]
+    },
+    {
+      "id": "opt_q1b",
+      "questionNumber": 1,
+      "part": "b",
+      "isMultipart": true,
+      "parentTitle": "Single Slit Diffraction Intensity and Missing Orders",
+      "type": "numerical",
+      "difficulty": "medium",
+      "title": "Missing Orders in Double Slit Diffraction",
+      "unit": "Diffraction",
+      "marks": 4,
+      "question": "In a double slit experiment, the slit width is 0.16 mm and spacing between the two slits is 0.8 mm. What are the missing orders in the diffraction pattern.",
+      "answer": "<h5>Missing Orders in Double Slit Pattern</h5><p><strong>Given:</strong></p><ul><li>Slit width: \\(a = 0.16\\) mm</li><li>Slit spacing: \\(d = 0.8\\) mm</li></ul><p><strong>Step 1: Condition for Missing Orders</strong><br>Missing orders occur when an interference maximum coincides with a diffraction minimum.<br>Interference maxima: \\(d \\sin\\theta = n\\lambda\\) ...(1)<br>Diffraction minima: \\(a \\sin\\theta = m\\lambda\\) ...(2)</p><p><strong>Step 2: Equating Conditions</strong><br>Dividing (1) by (2):<br>$$\\frac{n}{m} = \\frac{d}{a}$$<br>$$\\frac{n}{m} = \\frac{0.8}{0.16} = 5$$</p><p><strong>Step 3: Determining Orders</strong><br>Since \\(n = 5m\\) and \\(m = \\pm 1, \\pm 2, \\pm 3, ...\\), the orders \\(n\\) that are missing are multiples of 5.</p><p>$$\\boxed{\\text{Missing orders: } n = \\pm 5, \\pm 10, \\pm 15, \\pm 20, ...}$$</p>",
+      "keyPoints": [
+        "Missing order condition: n/m = d/a",
+        "Ratio d/a = 0.8 / 0.16 = 5",
+        "Missing orders are multiples of this ratio",
+        "n = 5, 10, 15, ..."
+      ]
+    },
+    {
+      "id": "opt_q2a",
+      "questionNumber": 2,
+      "part": "a",
+      "isMultipart": true,
+      "parentTitle": "O-ray, E-ray, Nicol Prism and Quarter Wave Plate",
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "O-ray, E-ray and Nicol Prism Analyser",
+      "unit": "Polarization",
+      "marks": 4,
+      "question": "What are O-ray and E-ray? How the nicol prism acts as analyser.",
+      "answer": "<h5>O-ray and E-ray</h5><p>When unpolarized light enters a uniaxial crystal (like calcite), it splits into two refracted rays due to double refraction (birefringence):</p><ul><li><strong>Ordinary Ray (O-ray):</strong> Obeys Snell's law of refraction. It travels with the same velocity \\(v_o\\) in all directions. Its vibrations are perpendicular to the principal section.</li><li><strong>Extraordinary Ray (E-ray):</strong> Does NOT obey Snell's law. Its velocity \\(v_e\\) varies with direction. Its vibrations lie in the principal section.</li></ul><h5>Nicol Prism as Analyser</h5><p>A Nicol prism consists of a calcite crystal cut diagonally and cemented with Canada balsam.</p><p><strong>Working as an Analyser:</strong></p><ul><li>The refractive index of Canada balsam (1.55) lies between \\(\\mu_o\\) (1.658) and \\(\\mu_e\\) (1.486).</li><li>When light enters, the O-ray undergoes Total Internal Reflection (TIR) at the balsam layer because \\(\\mu_o > \\mu_{balsam}\\).</li><li>The O-ray is absorbed by the blackened side of the prism.</li><li>The E-ray passes through the balsam layer because \\(\\mu_e < \\mu_{balsam}\\).</li><li>Thus, only plane polarized light emerges from the prism.</li><li>If we place a second Nicol prism (Analyser) after the first (Polarizer), rotating the analyser by 90° blocks the E-ray completely (crossed Nicols).</li></ul>",
+      "keyPoints": [
+        "O-ray obeys Snell's law; vibrations perpendicular to principal section.",
+        "E-ray varies velocity with direction; vibrations in principal section.",
+        "Nicol prism uses Canada balsam to eliminate O-ray by TIR.",
+        "Analyser detects polarization by rotating and checking intensity variation (Malus Law)."
+      ]
+    },
+    {
+      "id": "opt_q2b",
+      "questionNumber": 2,
+      "part": "b",
+      "isMultipart": true,
+      "parentTitle": "O-ray, E-ray, Nicol Prism and Quarter Wave Plate",
+      "type": "definition",
+      "difficulty": "easy",
+      "title": "Optic Axis, Positive and Negative Crystals",
+      "unit": "Polarization",
+      "marks": 2,
+      "question": "Define optic axis. What are positive and negative crystals?",
+      "answer": "<h5>Optic Axis</h5><p>The optic axis of a crystal is the direction along which the O-ray and E-ray travel with the same velocity. In this direction, there is no double refraction and the crystal behaves like an isotropic medium.</p><h5>Positive and Negative Crystals</h5><p>Based on the relative velocities of O-ray and E-ray:</p><ul><li><strong>Negative Crystal:</strong> The E-ray travels faster than the O-ray (\\(v_e > v_o\\)). Hence, \\(\\mu_e < \\mu_o\\). Example: Calcite (\\(\\mu_o = 1.658, \\mu_e = 1.486\\)).</li><li><strong>Positive Crystal:</strong> The O-ray travels faster than the E-ray (\\(v_o > v_e\\)). Hence, \\(\\mu_o < \\mu_e\\). Example: Quartz.</li></ul>",
+      "keyPoints": [
+        "Optic axis: Direction of no double refraction (ve = vo).",
+        "Negative crystal: μe < μo (E-ray faster). Example: Calcite.",
+        "Positive crystal: μe > μo (O-ray faster). Example: Quartz."
+      ]
+    },
+    {
+      "id": "opt_q2c",
+      "questionNumber": 2,
+      "part": "c",
+      "isMultipart": true,
+      "parentTitle": "O-ray, E-ray, Nicol Prism and Quarter Wave Plate",
+      "type": "numerical",
+      "difficulty": "medium",
+      "title": "Thickness of Mica Quarter Wave Plate",
+      "unit": "Polarization",
+      "marks": 4,
+      "question": "Calculate the thickness of a mica sheet required to make a quarter wave-plate for λ = 546 nm. The refractive indices for the O-ray and E-ray in mica are 1.586 and 1.592 respectively. Is it a positive or negative crystal?",
+      "answer": "<h5>Calculation of Thickness</h5><p><strong>Given:</strong></p><ul><li>Wavelength \\(\\lambda = 546 \\text{ nm} = 5.46 \\times 10^{-5} \\text{ cm}\\)</li><li>\\(\\mu_o = 1.586\\)</li><li>\\(\\mu_e = 1.592\\)</li></ul><p><strong>Step 1: Nature of Crystal</strong><br>Since \\(\\mu_e > \\mu_o\\) (1.592 > 1.586), the E-ray travels slower than the O-ray.<br>$$\\boxed{\\text{It is a Positive Crystal}}$$</p><p><strong>Step 2: Condition for Quarter Wave Plate</strong><br>A quarter wave plate introduces a phase difference of \\(\\pi/2\\) between O-ray and E-ray.<br>Path difference: \\(\\Delta = (\\mu_e - \\mu_o)t = \\frac{\\lambda}{4}\\)</p><p><strong>Step 3: Substitution</strong><br>$$t = \\frac{\\lambda}{4(\\mu_e - \\mu_o)}$$<br>$$t = \\frac{5.46 \\times 10^{-5} \\text{ cm}}{4 \\times (1.592 - 1.586)}$$<br>$$t = \\frac{5.46 \\times 10^{-5}}{4 \\times 0.006} = \\frac{5.46 \\times 10^{-5}}{0.024}$$</p><p><strong>Step 4: Result</strong><br>$$t = 2.275 \\times 10^{-3} \\text{ cm} = 22.75 \\times 10^{-4} \\text{ cm}$$<br>$$\\boxed{t \\approx 22.75 \\ \\mu\\text{m}}$$</p>",
+      "keyPoints": [
+        "Positive crystal because μe > μo.",
+        "Path difference formula: Δ = (μe - μo)t.",
+        "Quarter wave condition: Δ = λ/4.",
+        "Calculated thickness: t = 22.75 μm."
+      ]
+    },
+    {
+      "id": "opt_q3a",
+      "questionNumber": 3,
+      "part": "a",
+      "isMultipart": true,
+      "parentTitle": "Newton's Rings Experiment",
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "Conditions for Maxima and Minima in Newton's Rings",
+      "unit": "Interference",
+      "marks": 3,
+      "question": "Write down the conditions for maxima and minima in case of Newton's ring experiment.",
+      "answer": "<h5>Conditions for Maxima and Minima</h5><p>In Newton's rings experiment (reflected light), the optical path difference between rays reflected from the top surface of the air film and the bottom surface is:<br>$$\\Delta = 2\\mu t \\cos r + \\frac{\\lambda}{2}$$<br>For normal incidence (\\(\\cos r = 1\\)) and air film (\\(\\mu = 1\\)): \\(\\Delta = 2t + \\frac{\\lambda}{2}\\).</p><ul><li><strong>Condition for Maxima (Bright Rings):</strong> Path difference must be an integral multiple of \\(\\lambda\\).<br>$$2t + \\frac{\\lambda}{2} = n\\lambda \\implies 2t = (2n - 1)\\frac{\\lambda}{2} \\quad (n=1,2,3,...)$$</li><li><strong>Condition for Minima (Dark Rings):</strong> Path difference must be an odd multiple of \\(\\lambda/2\\).<br>$$2t + \\frac{\\lambda}{2} = (2n + 1)\\frac{\\lambda}{2} \\implies 2t = n\\lambda \\quad (n=0,1,2,3,...)$$</li></ul>",
+      "keyPoints": [
+        "Path difference: Δ = 2t + λ/2 (due to phase change of π at reflection).",
+        "Bright rings: 2t = (2n - 1)λ/2",
+        "Dark rings: 2t = nλ",
+        "Central spot corresponds to n=0, t=0, so Δ = λ/2 -> Destructive interference (Dark)."
+      ]
+    },
+    {
+      "id": "opt_q3b",
+      "questionNumber": 3,
+      "part": "b",
+      "isMultipart": true,
+      "parentTitle": "Newton's Rings Experiment",
+      "type": "theory",
+      "difficulty": "easy",
+      "title": "Why Centre of Newton's Rings is Dark",
+      "unit": "Interference",
+      "marks": 2,
+      "question": "Why is the centre of Newton's rings dark in case of thin air film in reflected mode?",
+      "answer": "<p>The centre of Newton's rings is dark in reflected light because the thickness of the air film at the point of contact (\\(t=0\\)) is effectively zero.</p><p>Although the geometrical path difference is zero, the ray reflected from the bottom surface (glass-air interface) undergoes a phase change of \\(\\pi\\) (path difference of \\(\\lambda/2\\)), while the ray reflected from the top surface (air-glass interface) does not.</p><p>Thus, the total path difference is \\(\\lambda/2\\), satisfying the condition for destructive interference (minima). Hence, the centre appears dark.</p>",
+      "keyPoints": [
+        "At center, thickness t = 0.",
+        "Phase change of π (λ/2) occurs at the lower reflection (glass to air).",
+        "Total path difference = λ/2.",
+        "λ/2 path difference leads to destructive interference (Dark fringe)."
+      ]
+    },
+    {
+      "id": "opt_q3c",
+      "questionNumber": 3,
+      "part": "c",
+      "isMultipart": true,
+      "parentTitle": "Newton's Rings Experiment",
+      "type": "numerical",
+      "difficulty": "medium",
+      "title": "Radius of 10th Dark Ring with Oil Film",
+      "unit": "Interference",
+      "marks": 5,
+      "question": "A film of oil of refractive index 1.7 is placed between a plane glass plate and an equi-convex lens. The focal length of the lens is 1 metre. Determine the radius of the 10th dark ring when wavelength of light is 6000 Å.",
+      "answer": "<h5>Radius of Dark Ring</h5><p><strong>Given:</strong></p><ul><li>Refractive index of oil \\(\\mu = 1.7\\)</li><li>Focal length of equi-convex lens \\(f = 1 \\text{ m} = 100 \\text{ cm}\\)</li><li>Order of dark ring \\(n = 10\\)</li><li>Wavelength \\(\\lambda = 6000 \\text{ Å} = 6 \\times 10^{-5} \\text{ cm}\\)</li></ul><p><strong>Step 1: Radius of Curvature of Lens</strong><br>Lens maker's formula for equi-convex lens (\\(R_1 = R, R_2 = -R\\)):<br>$$\\frac{1}{f} = (\\mu_g - 1)\\left(\\frac{2}{R}\\right)$$<br>Assume glass refractive index \\(\\mu_g \\approx 1.5\\).<br>$$\\frac{1}{100} = (1.5 - 1)\\frac{2}{R} \\implies R = 0.5 \\times 2 \\times 100 = 100 \\text{ cm}$$</p><p><strong>Step 2: Condition for Dark Ring with Oil Film</strong><br>When oil is present between lens and plate, the path difference becomes \\(2\\mu t\\). There is no phase change of \\(\\lambda/2\\) because reflections occur at interfaces of similar nature (assuming plate and lens have same refractive index as oil or higher? Wait, oil film between glass).<br>For dark ring: \\(2\\mu t = n\\lambda\\).<br>Geometrical relation: \\(t = \\frac{r^2}{2R}\\).</p><p><strong>Step 3: Substitution</strong><br>$$2\\mu \\left(\\frac{r_n^2}{2R}\\right) = n\\lambda$$<br>$$r_n = \\sqrt{\\frac{n\\lambda R}{\\mu}}$$</p><p><strong>Step 4: Calculation</strong><br>$$r_{10} = \\sqrt{\\frac{10 \\times 6 \\times 10^{-5} \\times 100}{1.7}}$$<br>$$r_{10} = \\sqrt{\\frac{0.06}{1.7}} = \\sqrt{0.03529}$$<br>$$r_{10} \\approx 0.1878 \\text{ cm}$$<br>$$\\boxed{r_{10} \\approx 0.188 \\text{ cm} \\text{ or } 1.88 \\text{ mm}}$$</p>",
+      "keyPoints": [
+        "Radius of curvature R calculated from focal length (assuming μg = 1.5).",
+        "Dark ring condition with oil: 2μt = nλ.",
+        "Geometric relation: t = r²/2R.",
+        "Final radius r10 ≈ 0.188 cm."
+      ]
+    },
+    {
+      "id": "opt_q4a",
+      "questionNumber": 4,
+      "part": "a",
+      "isMultipart": true,
+      "parentTitle": "Grating Spectra and Photon Energy",
+      "type": "theory",
+      "difficulty": "easy",
+      "title": "Intensity of Grating Spectra",
+      "unit": "Diffraction",
+      "marks": 2,
+      "question": "Write the expression of intensity of grating spectra.",
+      "answer": "<h5>Intensity Expression for Diffraction Grating</h5><p>The intensity distribution for a plane transmission grating with \\(N\\) slits is given by the product of the single slit diffraction pattern and the \\(N\\)-slit interference pattern.</p><p>$$I = I_0 \\left( \\frac{\\sin\\alpha}{\\alpha} \\right)^2 \\left( \\frac{\\sin N\\beta}{\\sin\\beta} \\right)^2$$</p><p>Where:</p><ul><li>\\(\\alpha = \\frac{\\pi a \\sin\\theta}{\\lambda}\\) (Single slit diffraction term)</li><li>\\(\\beta = \\frac{\\pi d \\sin\\theta}{\\lambda}\\) (Interference term between adjacent slits)</li><li>\\(a\\) = slit width, \\(d\\) = grating element, \\(N\\) = total number of slits.</li></ul>",
+      "keyPoints": [
+        "I = I₀ (sinα/α)² (sin Nβ / sinβ)²",
+        "α corresponds to single slit diffraction envelope.",
+        "β corresponds to N-slit interference pattern.",
+        "Principal maxima occur when sin Nβ = 0 and sinβ = 0."
+      ]
+    },
+    {
+      "id": "opt_q4b",
+      "questionNumber": 4,
+      "part": "b",
+      "isMultipart": true,
+      "parentTitle": "Grating Spectra and Photon Energy",
+      "type": "derivation",
+      "difficulty": "medium",
+      "title": "Condition for Principal Maxima of Grating Spectra",
+      "unit": "Diffraction",
+      "marks": 3,
+      "question": "Deduce the condition for principal maxima of grating spectra.",
+      "answer": "<h5>Condition for Principal Maxima</h5><p>The intensity of grating spectra is maximum when the interference term is maximum.</p><p><strong>Step 1: Interference Term</strong><br>The term is \\(\\frac{\\sin^2 N\\beta}{\\sin^2\\beta}\\).</p><p><strong>Step 2: Applying Limit</strong><br>This term reaches its maximum value of \\(N^2\\) when both the numerator and denominator are zero simultaneously.<br>$$\\sin\\beta = 0 \\implies \\beta = \\pm m\\pi \\quad (m = 0, 1, 2, 3, ...)$$</p><p><strong>Step 3: Substituting β</strong><br>We know \\(\\beta = \\frac{\\pi d \\sin\\theta}{\\lambda}\\).<br>$$\\frac{\\pi d \\sin\\theta}{\\lambda} = m\\pi$$<br>$$\\boxed{d \\sin\\theta = m\\lambda \\quad (m = 0, 1, 2, 3, ...)}$$</p><p>This is the grating equation. Here, \\(m\\) is the order of the principal maximum.</p>",
+      "keyPoints": [
+        "Principal maxima occur when sinβ = 0.",
+        "β = mπ (m = 0, 1, 2, ...).",
+        "Grating equation: d sinθ = mλ.",
+        "Intensity at principal maxima is proportional to N²."
+      ]
+    },
+    {
+      "id": "opt_q4c",
+      "questionNumber": 4,
+      "part": "c",
+      "isMultipart": true,
+      "parentTitle": "Grating Spectra and Photon Energy",
+      "type": "numerical",
+      "difficulty": "medium",
+      "title": "Energy Difference and Photon Emission Rate in Ne Atom",
+      "unit": "Laser",
+      "marks": 5,
+      "question": "Find the difference of energy between two energy levels of Ne atom if the transition between these levels gives a photon of wavelength 632.8 nm. Calculate the number of photons emitted per second to give a power output of 2 milliwatt.",
+      "answer": "<h5>Part 1: Energy Difference</h5><p><strong>Given:</strong></p><ul><li>Wavelength \\(\\lambda = 632.8 \\text{ nm} = 632.8 \\times 10^{-9} \\text{ m}\\)</li></ul><p><strong>Step 1: Formula for Photon Energy</strong><br>$$E = \\frac{hc}{\\lambda}$$<br>Where \\(h = 6.626 \\times 10^{-34} \\text{ J·s}\\) and \\(c = 3 \\times 10^8 \\text{ m/s}\\).</p><p><strong>Step 2: Calculation</strong><br>$$E = \\frac{6.626 \\times 10^{-34} \\times 3 \\times 10^8}{632.8 \\times 10^{-9}}$$<br>$$E = \\frac{1.9878 \\times 10^{-25}}{6.328 \\times 10^{-7}} \\approx 3.14 \\times 10^{-19} \\text{ J}$$<br>In electron-volts: \\(E = \\frac{3.14 \\times 10^{-19}}{1.6 \\times 10^{-19}} \\approx 1.96 \\text{ eV}\\).<br>$$\\boxed{\\Delta E \\approx 3.14 \\times 10^{-19} \\text{ J} \\text{ (or } 1.96 \\text{ eV)}}$$</p><h5>Part 2: Number of Photons per Second</h5><p><strong>Given:</strong></p><ul><li>Power \\(P = 2 \\text{ mW} = 2 \\times 10^{-3} \\text{ W}\\)</li></ul><p><strong>Step 1: Relation between Power and Photon Energy</strong><br>$$P = n \\times E \\implies n = \\frac{P}{E}$$</p><p><strong>Step 2: Calculation</strong><br>$$n = \\frac{2 \\times 10^{-3}}{3.14 \\times 10^{-19}}$$<br>$$n \\approx 6.37 \\times 10^{15} \\text{ photons/second}$$<br>$$\\boxed{n \\approx 6.37 \\times 10^{15} \\text{ s}^{-1}}$$</p>",
+      "keyPoints": [
+        "Photon energy E = hc/λ.",
+        "Calculated energy E = 3.14 × 10⁻¹⁹ J.",
+        "Photon emission rate n = P/E.",
+        "Number of photons per second n ≈ 6.37 × 10¹⁵."
+      ]
+    },
+    {
+      "id": "opt_q5a",
+      "questionNumber": 5,
+      "part": "a",
+      "isMultipart": true,
+      "parentTitle": "Double Slit Diffraction Pattern",
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "Intensity of Double Slit Diffraction Pattern",
+      "unit": "Diffraction",
+      "marks": 3,
+      "question": "Write down the expression for intensity of double slit diffraction pattern.",
+      "answer": "<h5>Intensity Expression for Double Slit Diffraction</h5><p>In a double slit experiment, the observed pattern is a combination of interference fringes (from two slits) modulated by the diffraction envelope (from a single slit).</p><p>The resultant intensity \\(I\\) at a point on the screen is given by:</p><p>$$I = 4 I_0 \\left( \\frac{\\sin\\alpha}{\\alpha} \\right)^2 \\cos^2\\beta$$</p><p>Where:</p><ul><li>\\(I_0\\) = Intensity of central maximum from one slit.</li><li>\\(\\alpha = \\frac{\\pi a \\sin\\theta}{\\lambda}\\) (Diffraction term, \\(a\\) = slit width).</li><li>\\(\\beta = \\frac{\\pi d \\sin\\theta}{\\lambda}\\) (Interference term, \\(d\\) = slit separation).</li></ul>",
+      "keyPoints": [
+        "I = 4 I₀ (sinα/α)² cos²β",
+        "Term (sinα/α)² is the single slit diffraction envelope.",
+        "Term cos²β is the Young's double slit interference pattern.",
+        "Missing orders occur when α = mπ (diffraction minimum) coincides with β = nπ (interference maximum)."
+      ]
+    },
+    {
+      "id": "opt_q5b",
+      "questionNumber": 5,
+      "part": "b",
+      "isMultipart": true,
+      "parentTitle": "Double Slit Diffraction Pattern",
+      "type": "derivation",
+      "difficulty": "medium",
+      "title": "Maxima and Minima Conditions for Double Slit",
+      "unit": "Diffraction",
+      "marks": 4,
+      "question": "Establish the conditions for different maxima's and minima's.",
+      "answer": "<h5>Conditions for Maxima and Minima</h5><p>From the intensity expression \\(I = 4 I_0 \\left( \\frac{\\sin\\alpha}{\\alpha} \\right)^2 \\cos^2\\beta\\):</p><h6>Interference Maxima (Bright Fringes)</h6><p>\\(\\cos^2\\beta = 1 \\implies \\beta = \\pm n\\pi\\)<br>$$\\frac{\\pi d \\sin\\theta}{\\lambda} = n\\pi \\implies \\boxed{d \\sin\\theta = n\\lambda \\quad (n = 0, 1, 2, ...)}$$</p><h6>Interference Minima (Dark Fringes)</h6><p>\\(\\cos^2\\beta = 0 \\implies \\beta = \\pm (2n+1)\\frac{\\pi}{2}\\)<br>$$\\frac{\\pi d \\sin\\theta}{\\lambda} = (2n+1)\\frac{\\pi}{2} \\implies \\boxed{d \\sin\\theta = (2n+1)\\frac{\\lambda}{2} \\quad (n = 0, 1, 2, ...)}$$</p><h6>Diffraction Minima</h6><p>\\(\\frac{\\sin^2\\alpha}{\\alpha^2} = 0 \\implies \\alpha = \\pm m\\pi\\) (except \\(\\alpha = 0\\))<br>$$\\frac{\\pi a \\sin\\theta}{\\lambda} = m\\pi \\implies \\boxed{a \\sin\\theta = m\\lambda \\quad (m = \\pm 1, \\pm 2, ...)}$$</p>",
+      "keyPoints": [
+        "Interference maxima: d sinθ = nλ.",
+        "Interference minima: d sinθ = (2n+1)λ/2.",
+        "Diffraction minima: a sinθ = mλ.",
+        "Missing orders: nλ/d = mλ/a => n/m = d/a."
+      ]
+    },
+    {
+      "id": "laser_q6",
+      "questionNumber": 6,
+      "isMultipart": false,
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "Pumping and Population Inversion in LASER",
+      "unit": "Laser",
+      "marks": 5,
+      "question": "What is 'Pumping' and 'Population Inversion' in LASER.",
+      "answer": "<h5>Pumping</h5><p><strong>Pumping</strong> is the process of supplying external energy to the active medium to excite atoms from the ground state (E₁) to higher energy levels (E₃ or E₄). It is essential to achieve population inversion.</p><p><strong>Types of Pumping:</strong></p><ul><li><strong>Optical Pumping:</strong> Intense flash of light (e.g., Ruby laser).</li><li><strong>Electrical Pumping:</strong> Electric discharge through gas (e.g., He-Ne laser).</li><li><strong>Chemical Pumping:</strong> Energy from chemical reactions.</li><li><strong>Injection Pumping:</strong> Forward-biased p-n junction (Semiconductor diode laser).</li></ul><h5>Population Inversion</h5><p>Under thermal equilibrium, the population of lower energy states is greater than higher energy states (\\(N_1 > N_2\\)).</p><p><strong>Population inversion</strong> is the non-equilibrium condition where the number of atoms in an excited state (\\(N_2\\)) exceeds the number in a lower state (\\(N_1\\)).</p><p>$$N_2 > N_1$$</p><p>This is a pre-requisite for laser action. When population inversion exists, the rate of stimulated emission dominates the rate of absorption, leading to amplification of light. This is usually achieved using a <strong>metastable state</strong> where atoms have a longer lifetime (\\(\\sim 10^{-3}\\) s).</p>",
+      "keyPoints": [
+        "Pumping: Exciting atoms to higher energy levels via external energy.",
+        "Types: Optical, Electrical, Chemical, Injection.",
+        "Population inversion: N₂ > N₁ (non-equilibrium condition).",
+        "Essential for Light Amplification (Stimulated Emission > Absorption)."
+      ]
+    },
+    {
+      "id": "polar_q7",
+      "questionNumber": 7,
+      "isMultipart": false,
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "Detection of Unpolarized, Circularly Polarized and Mixed Light",
+      "unit": "Polarization",
+      "marks": 5,
+      "question": "How can you detect an unpolarized light, circularly polarized light and the mixture of two.",
+      "answer": "<h5>Detection of Different States of Polarization</h5><p>To distinguish between unpolarized, circularly polarized, and a mixture, we need a <strong>Quarter Wave Plate (QWP)</strong> and a <strong>Rotating Analyser (Nicol Prism)</strong>.</p><ol><li><strong>Unpolarized Light:</strong><br>When passed through a rotating analyser alone, the intensity remains <strong>constant</strong> for all orientations of the analyser. Introducing a QWP does not change this; the intensity remains constant.</li><li><strong>Circularly Polarized Light:</strong><br>When passed through a rotating analyser alone, the intensity remains <strong>constant</strong> (mimicking unpolarized light).<br>However, if we first pass it through a QWP, it gets converted into <strong>Plane Polarized Light</strong>. Now, when passed through the rotating analyser, the intensity varies from maximum to zero (or minimum) following Malus' Law.</li><li><strong>Mixture of Unpolarized and Circularly Polarized Light:</strong><br>With analyser alone, intensity is constant but brighter than pure circular light.<br>With QWP + Analyser: The circular component becomes plane polarized, causing the intensity to <strong>fluctuate</strong> (max to min). However, because of the unpolarized component, the minimum intensity will NOT be zero (there will be a constant background). The difference between max and min intensity corresponds to the circularly polarized component.</li></ol>",
+      "keyPoints": [
+        "Unpolarized: Intensity constant with analyser (with or without QWP).",
+        "Circularly polarized: Constant with analyser; Varies with QWP + Analyser.",
+        "Mixture: Varies with QWP + Analyser, but minimum intensity ≠ 0.",
+        "QWP converts circular polarization to linear polarization."
+      ]
+    },
+    {
+      "id": "polar_q8",
+      "questionNumber": 8,
+      "isMultipart": false,
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "Brewster's Law and He-Ne Laser Gas Ratio",
+      "unit": "Polarization",
+      "marks": 5,
+      "question": "Define Brewster's law in polarization with proper diagram. What is the ratio of two gases in He-Ne laser.",
+      "answer": "<h5>Brewster's Law</h5><p><strong>Statement:</strong> The tangent of the polarizing angle (Brewster angle \\(i_p\\)) is numerically equal to the refractive index of the medium.</p><p>$$\\mu = \\tan i_p$$</p><p><strong>Explanation with Diagram:</strong><br>When unpolarized light is incident at the Brewster angle \\(i_p\\), the reflected ray is completely plane polarized with vibrations perpendicular to the plane of incidence.<br>[Diagram Description: Incident ray at angle \\(i_p\\) to normal, reflected ray at \\(i_p\\), refracted ray at \\(r\\). Angle between reflected and refracted ray is 90°].</p><p><strong>Derivation:</strong><br>From Snell's law: \\(\\mu = \\frac{\\sin i_p}{\\sin r}\\).<br>Since reflected and refracted rays are perpendicular: \\(i_p + r = 90^\\circ \\implies r = 90^\\circ - i_p\\).<br>\\(\\mu = \\frac{\\sin i_p}{\\sin(90^\\circ - i_p)} = \\frac{\\sin i_p}{\\cos i_p} = \\tan i_p\\).</p><h5>He-Ne Laser Gas Ratio</h5><p>A Helium-Neon laser consists of a mixture of Helium and Neon gases.</p><p>The typical <strong>ratio of Helium to Neon</strong> is approximately <strong>10:1</strong> (or sometimes 7:1 depending on the specific tube design). The total pressure is about 1 Torr, with He partial pressure ~ 0.9 Torr and Ne ~ 0.1 Torr.</p><p>$$\\boxed{\\text{He : Ne} = 10 : 1}$$</p>",
+      "keyPoints": [
+        "Brewster's Law: μ = tan ip.",
+        "At ip, reflected light is completely plane polarized.",
+        "Angle between reflected and refracted rays is 90°.",
+        "He-Ne laser gas mixture ratio is He:Ne = 10:1."
+      ]
+    },
+    {
+      "id": "laser_q9",
+      "questionNumber": 9,
+      "isMultipart": false,
+      "type": "derivation",
+      "difficulty": "hard",
+      "title": "Einstein's A and B Coefficients Relation",
+      "unit": "Laser",
+      "marks": 8,
+      "question": "Establish the relation between Spontaneous and stimulated emission probabilities and hence find out the relation between field energy and Einstein's 'A', 'B' coefficient.",
+      "answer": "<h5>Relation between Einstein's Coefficients</h5><p>Consider an atomic system with energy levels \\(E_1\\) and \\(E_2\\) (\\(E_2 > E_1\\)). Let \\(N_1\\) and \\(N_2\\) be the number of atoms per unit volume in these states.</p><p><strong>Step 1: Transition Rates</strong><br>- <strong>Spontaneous Emission:</strong> Rate = \\(A_{21} N_2\\)<br>- <strong>Stimulated Emission:</strong> Rate = \\(B_{21} \\rho(\\nu) N_2\\)<br>- <strong>Absorption:</strong> Rate = \\(B_{12} \\rho(\\nu) N_1\\)<br>where \\(\\rho(\\nu)\\) is the energy density of radiation at frequency \\(\\nu\\).</p><p><strong>Step 2: Thermal Equilibrium</strong><br>At equilibrium, total upward transitions = total downward transitions.<br>$$B_{12} \\rho(\\nu) N_1 = A_{21} N_2 + B_{21} \\rho(\\nu) N_2$$<br>$$\\rho(\\nu) = \\frac{A_{21} N_2}{B_{12} N_1 - B_{21} N_2} = \\frac{A_{21}}{B_{12} (N_1/N_2) - B_{21}}$$</p><p><strong>Step 3: Boltzmann Distribution</strong><br>From Boltzmann's law: \\(\\frac{N_1}{N_2} = e^{(E_2 - E_1)/k_BT} = e^{h\\nu/k_BT}\\).<br>$$\\rho(\\nu) = \\frac{A_{21}}{B_{12} e^{h\\nu/k_BT} - B_{21}}$$</p><p><strong>Step 4: Comparison with Planck's Law</strong><br>Planck's radiation law states: \\(\\rho(\\nu) = \\frac{8\\pi h \\nu^3}{c^3} \\frac{1}{e^{h\\nu/k_BT} - 1}\\).</p><p><strong>Step 5: Equating Coefficients</strong><br>Comparing the two expressions for \\(\\rho(\\nu)\\):<br>1. \\(B_{12} = B_{21}\\) (Probability of absorption equals probability of stimulated emission).<br>2. \\(\\frac{A_{21}}{B_{21}} = \\frac{8\\pi h \\nu^3}{c^3}\\).</p><p><strong>Step 6: Relation with Field Energy</strong><br>The ratio \\(A/B\\) is directly proportional to the cube of the frequency \\(\\nu^3\\). This implies that spontaneous emission dominates at higher frequencies (optical region), while stimulated emission is significant at lower frequencies (microwave/maser region).</p><p>$$\\boxed{\\frac{A_{21}}{B_{21}} = \\frac{8\\pi h \\nu^3}{c^3}}$$</p>",
+      "keyPoints": [
+        "At equilibrium: B12 ρ N1 = A21 N2 + B21 ρ N2.",
+        "Using Boltzmann distribution and Planck's law.",
+        "Einstein's relations: B12 = B21 and A21/B21 = 8πhν³/c³.",
+        "Spontaneous emission dominates at high frequencies (optical)."
+      ]
+    },
+    {
+      "id": "opt_q10",
+      "questionNumber": 10,
+      "isMultipart": false,
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "Interference Condition and Division of Wavefront/Amplitude",
+      "unit": "Interference",
+      "marks": 5,
+      "question": "Write down the condition of interference of light. Distinguish between interference by division of amplitude and interference by division of wavefront with example.",
+      "answer": "<h5>Conditions for Interference of Light</h5><ol><li><strong>Coherence:</strong> The two sources must be coherent (constant phase difference).</li><li><strong>Same Frequency:</strong> The light waves must have the same frequency (monochromatic).</li><li><strong>Same Polarization:</strong> The waves must have the same state of polarization.</li><li><strong>Path Difference:</strong> The path difference must be less than the coherence length.</li></ol><h5>Division of Wavefront vs. Division of Amplitude</h5><table border='1'><tr><th>Division of Wavefront</th><th>Division of Amplitude</th></tr><tr><td>The incident wavefront is divided into two parts spatially.</td><td>The amplitude of the incident wave is divided into reflected and transmitted components.</td></tr><tr><td>Point sources are used.</td><td>Extended sources can be used.</td></tr><tr><td>Example: <strong>Young's Double Slit Experiment</strong>, Fresnel's Biprism.</td><td>Example: <strong>Newton's Rings</strong>, Michelson Interferometer, Thin film colors.</td></tr><tr><td>Fringes are localized only if using extended source, but typically non-localized for point source.</td><td>Fringes are localized (e.g., on the film surface or at infinity).</td></tr></table>",
+      "keyPoints": [
+        "Conditions: Coherence, Same Frequency, Same Polarization.",
+        "Division of Wavefront: Splits wave spatially (e.g., Young's Double Slit).",
+        "Division of Amplitude: Splits energy via partial reflection (e.g., Newton's Rings).",
+        "Division of Amplitude works with extended sources."
+      ]
+    },
+    {
+      "id": "opt_q11",
+      "questionNumber": 11,
+      "isMultipart": false,
+      "type": "derivation",
+      "difficulty": "medium",
+      "title": "Radius of Dark Ring Proportional to √n in Newton's Rings",
+      "unit": "Interference",
+      "marks": 5,
+      "question": "Show that the radius of the dark ring in Newton's ring is proportional to the square root of natural number.",
+      "answer": "<h5>Proof of Proportionality</h5><p><strong>Step 1: Condition for Dark Ring</strong><br>In reflected light, for an air film (\\(\\mu=1\\)), the condition for the \\(n^{th}\\) dark ring is:<br>$$2t = n\\lambda \\quad (n = 0, 1, 2, 3, ...)$$<br>where \\(t\\) is the thickness of the air film at the point of observation.</p><p><strong>Step 2: Geometrical Relation</strong><br>Let \\(R\\) be the radius of curvature of the plano-convex lens, and \\(r_n\\) be the radius of the \\(n^{th}\\) ring.<br>From the geometry of the circle: \\(r_n^2 = R^2 - (R - t)^2\\).<br>$$r_n^2 = R^2 - (R^2 - 2Rt + t^2) = 2Rt - t^2$$</p><p><strong>Step 3: Approximation</strong><br>Since \\(R\\) is large (typically ~100 cm) and \\(t\\) is very small (order of \\(\\lambda\\), ~10⁻⁵ cm), \\(t^2\\) is negligible compared to \\(2Rt\\).<br>$$r_n^2 \\approx 2Rt$$</p><p><strong>Step 4: Substituting t</strong><br>From the interference condition: \\(t = \\frac{n\\lambda}{2}\\).<br>$$r_n^2 = 2R \\left(\\frac{n\\lambda}{2}\\right) = R n \\lambda$$</p><p><strong>Step 5: Final Relation</strong><br>$$r_n = \\sqrt{n \\lambda R}$$<br>$$\\boxed{r_n \\propto \\sqrt{n}}$$<br>Thus, the radius of the dark ring is directly proportional to the square root of the natural number \\(n\\).</p>",
+      "keyPoints": [
+        "Dark ring condition: 2t = nλ.",
+        "Geometric relation: r_n² ≈ 2Rt (neglecting t²).",
+        "Substitution gives r_n² = nλR.",
+        "Final relation: r_n ∝ √n."
+      ]
+    },
+    {
+      "id": "polar_q12",
+      "questionNumber": 12,
+      "isMultipart": false,
+      "type": "derivation",
+      "difficulty": "medium",
+      "title": "Brewster's Law and 90° Angle between Reflected and Refracted Rays",
+      "unit": "Polarization",
+      "marks": 5,
+      "question": "Explain Brewster's law in polarization. Hence show that the angle between the reflected and refracted rays is 90°.",
+      "answer": "<h5>Brewster's Law</h5><p><strong>Statement:</strong> The refractive index of a medium is equal to the tangent of the polarizing angle (Brewster angle \\(i_p\\)).<br>$$\\mu = \\tan i_p$$</p><p><strong>Explanation:</strong> When unpolarized light is incident on a transparent medium at the Brewster angle, the reflected light is completely plane polarized. The vibrations of the electric vector in the reflected ray are perpendicular to the plane of incidence.</p><h5>Proof that Angle between Reflected and Refracted Rays is 90°</h5><p><strong>Step 1: Snell's Law</strong><br>When light is incident at \\(i_p\\), Snell's law gives:<br>$$\\mu = \\frac{\\sin i_p}{\\sin r}$$<br>where \\(r\\) is the angle of refraction.</p><p><strong>Step 2: Brewster's Law Relation</strong><br>From Brewster's Law: \\(\\mu = \\tan i_p = \\frac{\\sin i_p}{\\cos i_p}\\).</p><p><strong>Step 3: Equating Expressions</strong><br>Equating the two expressions for \\(\\mu\\):<br>$$\\frac{\\sin i_p}{\\sin r} = \\frac{\\sin i_p}{\\cos i_p}$$<br>$$\\sin r = \\cos i_p$$</p><p><strong>Step 4: Trigonometric Identity</strong><br>$$\\sin r = \\sin(90^\\circ - i_p)$$<br>$$r = 90^\\circ - i_p$$<br>$$i_p + r = 90^\\circ$$</p><p>Since the angle of incidence equals the angle of reflection, the angle between the reflected ray (angle \\(i_p\\)) and the refracted ray (angle \\(r\\)) is:<br>$$(90^\\circ - i_p) + (90^\\circ - r) = 180^\\circ - (i_p + r) = 180^\\circ - 90^\\circ = 90^\\circ$$<br>$$\\boxed{\\text{Angle between reflected and refracted rays is } 90^\\circ}$$</p>",
+      "keyPoints": [
+        "Brewster's Law: μ = tan ip.",
+        "Snell's Law: μ = sin ip / sin r.",
+        "Equating gives sin r = cos ip => r = 90° - ip.",
+        "Geometric angle between reflected and refracted rays is 90°."
+      ]
+    },
+    {
+      "id": "polar_q13",
+      "questionNumber": 13,
+      "isMultipart": false,
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "Distinguishing Polarized Light States",
+      "unit": "Polarization",
+      "marks": 5,
+      "question": "How can you distinguish unpolarized, linear polarized, circular polarized, and elliptical polarized light?",
+      "answer": "<h5>Distinguishing Polarization States</h5><p>To distinguish all four states, we need a <strong>Quarter Wave Plate (QWP)</strong> and a <strong>Rotating Analyser</strong>.</p><ol><li><strong>Step 1: Analyser Only</strong><br><ul><li>Intensity <strong>constant</strong> on rotation: Unpolarized, Circular, or mixture of both.</li><li>Intensity <strong>varies</strong> (max to zero): Linearly Polarized.</li><li>Intensity <strong>varies</strong> (max to min, but min ≠ 0): Elliptically Polarized or Partially Polarized.</li></ul></li><li><strong>Step 2: Introduce QWP followed by Analyser</strong><br>Focus on cases that gave constant intensity in Step 1 (Unpolarized vs. Circular):<br><ul><li>If intensity <strong>remains constant</strong> with QWP + Analyser: <strong>Unpolarized</strong>.</li><li>If intensity <strong>varies</strong> (max to zero) with QWP + Analyser: <strong>Circularly Polarized</strong>.</li></ul></li><li><strong>Step 3: Distinguishing Elliptical Polarization</strong><br>Place QWP with its fast axis parallel to the major axis of the ellipse (found by noting analyser position for max intensity).<br><ul><li>If it converts to <strong>Linearly Polarized</strong> light (intensity varies to zero), it is <strong>Elliptically Polarized</strong>.</li><li>If minimum intensity remains non-zero even after QWP alignment, it is a <strong>Mixture</strong>.</li></ul></li></ol>",
+      "keyPoints": [
+        "Analyser alone: Constant intensity = Unpolarized/Circular; Varies = Linear/Elliptical.",
+        "QWP + Analyser: Converts Circular to Linear (varies to zero).",
+        "Elliptical becomes Linear only when QWP axes align with ellipse axes.",
+        "Partial/Mixture always has a non-zero minimum intensity."
+      ]
+    },
+    {
+      "id": "laser_q14",
+      "questionNumber": 14,
+      "isMultipart": false,
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "Working Principle of He-Ne Laser with Energy Level Diagram",
+      "unit": "Laser",
+      "marks": 8,
+      "question": "Explain the working principle of He - Ne laser with energy level diagram.",
+      "answer": "<h5>He-Ne Laser Working Principle</h5><p>The He-Ne laser is a continuous wave (CW) gas laser. It uses a mixture of Helium and Neon (10:1 ratio) at low pressure inside a glass tube.</p><p><strong>Energy Level Diagram:</strong><br>[Diagram Description: He has metastable states at 20.61 eV (2³S) and 20.66 eV (2¹S). Ne has excited states at 20.66 eV (5s) and 20.30 eV (4s), and lower levels at 18.70 eV (3p) and 19.78 eV (4p). Lasing occurs at 632.8 nm (3.39 μm and 1.15 μm also possible).]</p><p><strong>Step 1: Pumping</strong><br>An electric discharge (Electrical Pumping) excites Helium atoms to the metastable states \\(2^3S\\) and \\(2^1S\\).<br>$$\\text{He} + e^- \\rightarrow \\text{He}^*$$</p><p><strong>Step 2: Energy Transfer (Resonant Collision)</strong><br>Excited He atoms collide with ground-state Ne atoms. Because the energy levels of He (20.61, 20.66 eV) closely match the 5s and 4s levels of Ne (20.66, 20.30 eV), energy is transferred efficiently.<br>$$\\text{He}^* + \\text{Ne} \\rightarrow \\text{He} + \\text{Ne}^*$$</p><p><strong>Step 3: Population Inversion</strong><br>The 5s and 4s levels of Neon are metastable (long lifetime), accumulating a large population. The lower 3p and 4p levels have very short lifetimes (~10⁻⁸ s) and decay quickly to the 3s level via spontaneous emission. Thus, Population Inversion is achieved between 5s → 3p (3.39 μm), 5s → 4p (632.8 nm), and 4s → 3p (1.15 μm).</p><p><strong>Step 4: Stimulated Emission</strong><br>A photon of wavelength 632.8 nm triggers stimulated emission from 5s to 4p. The optical cavity (mirrors at both ends) provides feedback for amplification.</p>",
+      "keyPoints": [
+        "Active medium: Mixture of He and Ne (10:1 ratio).",
+        "Pumping: Electrical discharge excites He atoms.",
+        "Resonant energy transfer from He metastable states to Ne 5s/4s levels.",
+        "Population inversion achieved between 5s and 4p/3p levels (λ = 632.8 nm)."
+      ]
+    },
+    {
+      "id": "laser_q15",
+      "questionNumber": 15,
+      "isMultipart": false,
+      "type": "theory",
+      "difficulty": "medium",
+      "title": "Metastable States and Ordinary vs Laser Light",
+      "unit": "Laser",
+      "marks": 5,
+      "question": "What are the metastable states? What are the differences between ordinary light and laser light?",
+      "answer": "<h5>Metastable States</h5><p>A <strong>metastable state</strong> is an excited energy level of an atom where the lifetime of the electron is exceptionally long compared to ordinary excited states (typically \\(10^{-3}\\) seconds instead of \\(10^{-8}\\) seconds).</p><p>Because electrons stay in this state for a long time, it acts as a \"temporary storage\" for energy, allowing a large population of excited atoms to accumulate. This is crucial for achieving <strong>Population Inversion</strong> in lasers. Examples: He \\(2^1S\\) and \\(2^3S\\) states, Ruby \\(E\\) level.</p><h5>Differences between Ordinary Light and Laser Light</h5><table border='1'><tr><th>Feature</th><th>Ordinary Light</th><th>Laser Light</th></tr><tr><td><strong>Coherence</strong></td><td>Incoherent (random phase differences).</td><td>Highly Coherent (spatial and temporal).</td></tr><tr><td><strong>Directionality</strong></td><td>Divergent (spreads in all directions).</td><td>Highly Directional (very narrow beam).</td></tr><tr><td><strong>Monochromacity</strong></td><td>Polychromatic or broad band (e.g., white light).</td><td>Highly Monochromatic (single wavelength).</td></tr><tr><td><strong>Intensity</strong></td><td>Low intensity.</td><td>Extremely High Intensity (due to concentrated power).</td></tr><tr><td><strong>Emission Process</strong></td><td>Spontaneous emission dominates.</td><td>Stimulated emission dominates.</td></tr></table>",
+      "keyPoints": [
+        "Metastable state: Long lifetime excited state (~10⁻³ s).",
+        "Essential for achieving Population Inversion.",
+        "Laser light is Coherent, Monochromatic, Directional, and Intense.",
+        "Ordinary light is Incoherent, Divergent, and Polychromatic."
+      ]
+    },
+    {
+      "id": "polar_q16",
+      "questionNumber": 16,
+      "isMultipart": false,
+      "type": "numerical",
+      "difficulty": "medium",
+      "title": "Retardation Plate and Minimum Thickness of Quartz",
+      "unit": "Polarization",
+      "marks": 6,
+      "question": "What is retardation plate? A plane polarized light of wavelength 600 nm changes to a circularly polarized light on passing through a quartz crystal cut parallel to optic axis. Calculate the minimum thickness to produce such effect. Given μe - μo = 0.005.",
+      "answer": "<h5>Retardation Plate</h5><p>A retardation plate is an optical element made from a birefringent material (like quartz or mica) cut with its optic axis parallel to the surface. It introduces a specific phase difference (retardation) between the Ordinary (O) and Extraordinary (E) rays.</p><p>If phase difference is \\(\\pi/2\\) (path diff = \\(\\lambda/4\\)), it's a Quarter Wave Plate.<br>If phase difference is \\(\\pi\\) (path diff = \\(\\lambda/2\\)), it's a Half Wave Plate.</p><h5>Calculation of Minimum Thickness</h5><p><strong>Given:</strong></p><ul><li>Wavelength \\(\\lambda = 600 \\text{ nm} = 6 \\times 10^{-5} \\text{ cm}\\)</li><li>\\(\\mu_e - \\mu_o = 0.005\\)</li></ul><p><strong>Step 1: Condition for Circular Polarization</strong><br>Plane polarized light becomes circularly polarized when passed through a Quarter Wave Plate (QWP).<br>Path difference: \\(\\Delta = (\\mu_e - \\mu_o)t = \\frac{\\lambda}{4}\\).</p><p><strong>Step 2: Formula for Thickness</strong><br>$$t = \\frac{\\lambda}{4(\\mu_e - \\mu_o)}$$</p><p><strong>Step 3: Substitution</strong><br>$$t = \\frac{6 \\times 10^{-5} \\text{ cm}}{4 \\times 0.005}$$<br>$$t = \\frac{6 \\times 10^{-5}}{0.02} = 3 \\times 10^{-3} \\text{ cm}$$</p><p><strong>Step 4: Final Answer</strong><br>$$t = 0.003 \\text{ cm} = 0.03 \\text{ mm} = 30 \\ \\mu\\text{m}$$<br>$$\\boxed{t = 30 \\ \\mu\\text{m}}$$</p><p><em>Note: This is the minimum thickness for a QWP. Higher thicknesses where \\(\\Delta = (2n+1)\\lambda/4\\) also work but are not minimum.</em></p>",
+      "keyPoints": [
+        "Retardation plate introduces phase difference between O and E rays.",
+        "Circular polarization requires Quarter Wave Plate (Δ = λ/4).",
+        "Formula: t = λ / [4(μe - μo)].",
+        "Calculated thickness: t = 30 μm."
+      ]
+    },
+    {
+      "id": "polar_q17",
+      "questionNumber": 17,
+      "isMultipart": false,
+      "type": "mixed",
+      "difficulty": "medium",
+      "title": "Crystal Definitions and Polarizing Angle Calculation",
+      "unit": "Polarization",
+      "marks": 8,
+      "question": "Define with examples: uniaxial crystal, biaxial crystal, positive crystal and negative crystal. Find the polarizing angles for a glass of refractive index 1.52. Also find the angle of refraction.",
+      "answer": "<h5>Definitions</h5><ul><li><strong>Uniaxial Crystal:</strong> Crystals having only one optic axis. Light splits into O-ray and E-ray. <br>Examples: Calcite, Quartz, Tourmaline.</li><li><strong>Biaxial Crystal:</strong> Crystals having two optic axes. They have three different principal refractive indices. <br>Examples: Mica, Topaz, Gypsum.</li><li><strong>Positive Crystal:</strong> In uniaxial crystals, if \\(\\mu_e > \\mu_o\\) (E-ray slower than O-ray), it is a positive crystal. <br>Example: Quartz.</li><li><strong>Negative Crystal:</strong> In uniaxial crystals, if \\(\\mu_e < \\mu_o\\) (E-ray faster than O-ray), it is a negative crystal. <br>Example: Calcite.</li></ul><h5>Polarizing Angle Calculation</h5><p><strong>Given:</strong> Refractive index of glass \\(\\mu = 1.52\\).</p><p><strong>Step 1: Brewster's Law</strong><br>$$\\tan i_p = \\mu = 1.52$$</p><p><strong>Step 2: Polarizing Angle</strong><br>$$i_p = \\tan^{-1}(1.52) \\approx 56.66^\\circ$$<br>$$\\boxed{i_p \\approx 56.7^\\circ}$$</p><p><strong>Step 3: Angle of Refraction</strong><br>At polarizing angle, reflected and refracted rays are perpendicular:<br>$$i_p + r = 90^\\circ$$<br>$$r = 90^\\circ - 56.66^\\circ = 33.34^\\circ$$<br>$$\\boxed{r \\approx 33.3^\\circ}$$</p>",
+      "keyPoints": [
+        "Uniaxial: One optic axis (Calcite, Quartz). Biaxial: Two optic axes (Mica).",
+        "Positive crystal: μe > μo. Negative: μe < μo.",
+        "Polarizing angle ip = tan⁻¹(1.52) ≈ 56.7°.",
+        "Angle of refraction r = 90° - ip ≈ 33.3°."
+      ]
+    },
+    {
+      "id": "polar_q18",
+      "questionNumber": 18,
+      "isMultipart": false,
+      "type": "mixed",
+      "difficulty": "medium",
+      "title": "Emission Comparison, Malus Law and Polarization State",
+      "unit": "Polarization",
+      "marks": 8,
+      "question": "Distinguish between spontaneous and stimulated emission. Define Malus law in polarization. Find the state of polarization when the x and y components of electric field are given by Ex = E1 Sin(ωt + kz) and Ey = E2 cos(ωt + kz).",
+      "answer": "<h5>Spontaneous vs. Stimulated Emission</h5><table border='1'><tr><th>Spontaneous Emission</th><th>Stimulated Emission</th></tr><tr><td>Atom decays from higher to lower state on its own.</td><td>Atom is triggered to decay by an external photon.</td></tr><tr><td>No external radiation required.</td><td>External radiation of specific frequency is required.</td></tr><tr><td>Emitted photon has random phase and direction.</td><td>Emitted photon is identical (coherent) in phase, frequency, and direction to the incident photon.</td></tr><tr><td>Incoherent light (Ordinary light).</td><td>Coherent light (Laser).</td></tr><tr><td>Probability depends on A coefficient.</td><td>Probability depends on B coefficient × Energy Density.</td></tr></table><h5>Malus Law</h5><p><strong>Statement:</strong> When a plane polarized light is incident on an analyser, the intensity \\(I\\) of the transmitted light is directly proportional to the square of the cosine of the angle \\(\\theta\\) between the plane of transmission of the analyser and the plane of polarization of the incident light.</p><p>$$I = I_0 \\cos^2\\theta$$</p><h5>Polarization State Analysis</h5><p><strong>Given:</strong> \\(E_x = E_1 \\sin(\\omega t + kz)\\) and \\(E_y = E_2 \\cos(\\omega t + kz)\\).</p><p><strong>Step 1: Rewrite Components</strong><br>Let \\(\\phi = \\omega t + kz\\).<br>\\(E_x = E_1 \\sin\\phi\\) and \\(E_y = E_2 \\cos\\phi\\).</p><p><strong>Step 2: Eliminate Time Parameter</strong><br>$$\\frac{E_x^2}{E_1^2} = \\sin^2\\phi \\quad \\text{and} \\quad \\frac{E_y^2}{E_2^2} = \\cos^2\\phi$$<br>Adding the two equations:<br>$$\\frac{E_x^2}{E_1^2} + \\frac{E_y^2}{E_2^2} = \\sin^2\\phi + \\cos^2\\phi = 1$$</p><p><strong>Step 3: Interpretation</strong><br>This is the equation of an <strong>Ellipse</strong> with semi-major and semi-minor axes \\(E_1\\) and \\(E_2\\) aligned with the coordinate axes.</p><p>$$\\boxed{\\text{Elliptically Polarized Light}}$$</p><p><em>If \\(E_1 = E_2\\), it becomes <strong>Circularly Polarized</strong>.</em></p>",
+      "keyPoints": [
+        "Stimulated emission produces coherent photons identical to the incident photon.",
+        "Malus Law: I = I₀ cos²θ.",
+        "Equation of ellipse: (Ex/E₁)² + (Ey/E₂)² = 1.",
+        "Resulting state: Elliptically Polarized."
+      ]
+    },
+    {
+      "id": "opt_q19",
+      "questionNumber": 19,
+      "isMultipart": false,
+      "type": "numerical",
+      "difficulty": "medium",
+      "title": "Radius of Plano-Convex Lens from Newton's Rings Data",
+      "unit": "Interference",
+      "marks": 6,
+      "question": "In a Newton's ring experiment, the diameter of 5th dark ring is 0.336 cm and the diameter of the 15th dark ring is 0.590 cm. Find the radius of the plano-convex lens if the wavelength of the light used is 589 nm.",
+      "answer": "<h5>Calculation of Radius of Curvature</h5><p><strong>Given:</strong></p><ul><li>Diameter of 5th dark ring: \\(D_5 = 0.336 \\text{ cm}\\)</li><li>Diameter of 15th dark ring: \\(D_{15} = 0.590 \\text{ cm}\\)</li><li>Wavelength \\(\\lambda = 589 \\text{ nm} = 5.89 \\times 10^{-5} \\text{ cm}\\)</li><li>Order \\(m = 5\\) and \\(n = 15\\)</li></ul><p><strong>Step 1: Formula for Dark Rings</strong><br>For dark rings in reflected light: \\(D_n^2 = 4 n \\lambda R\\).</p><p><strong>Step 2: Difference in Squares</strong><br>To eliminate the error in locating the central point, we use the difference:<br>$$D_{15}^2 - D_5^2 = 4(15)\\lambda R - 4(5)\\lambda R$$<br>$$D_{15}^2 - D_5^2 = 4 \\lambda R (15 - 5) = 40 \\lambda R$$</p><p><strong>Step 3: Calculation of Difference</strong><br>$$D_{15}^2 = (0.590)^2 = 0.3481 \\text{ cm}^2$$<br>$$D_5^2 = (0.336)^2 = 0.112896 \\text{ cm}^2$$<br>$$D_{15}^2 - D_5^2 = 0.3481 - 0.112896 = 0.235204 \\text{ cm}^2$$</p><p><strong>Step 4: Solving for R</strong><br>$$R = \\frac{D_{15}^2 - D_5^2}{40 \\lambda}$$<br>$$R = \\frac{0.235204}{40 \\times 5.89 \\times 10^{-5}}$$<br>$$R = \\frac{0.235204}{0.002356} \\approx 99.83 \\text{ cm}$$</p><p>$$\\boxed{R \\approx 99.8 \\text{ cm} \\text{ (or } 1 \\text{ m approx)}}$$</p>",
+      "keyPoints": [
+        "Dark ring formula: D_n² = 4nλR.",
+        "Used difference method: D₁₅² - D₅² = 40λR.",
+        "Eliminates error due to imperfect contact at center.",
+        "Calculated radius of curvature R ≈ 99.8 cm."
+      ]
+    }
+  ]
+}

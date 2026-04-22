@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="description" content="B.Tech 2nd Semester - Module Learning System">
+    <title>B.Tech Semester 2 - Module Learning System</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --text-muted: #94a3b8;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --text: #f1f5f9;
+            --text-light: #94a3b8;
+            --text-muted: #64748b;
+            --card-bg: #1e293b;
+            --border: #334155;
+            --shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        [data-theme="dark"] .hero {
+            background: linear-gradient(135deg, #312e81 0%, #581c87 100%);
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 4px 16px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            backdrop-filter: blur(4px);
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            border: none;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            backdrop-filter: blur(4px);
+        }
+
+        .theme-toggle:hover { background: rgba(255,255,255,0.25); }
+        .theme-toggle svg { width: 22px; height: 22px; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .subject-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+        }
+
+        [data-theme="dark"] .subject-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .subject-icon {
+            font-size: 2.8rem;
+            line-height: 1;
+        }
+
+        .subject-code-badge {
+            padding: 4px 10px;
+            background: var(--bg);
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-light);
+            border: 1px solid var(--border);
+        }
+
+        .subject-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .subject-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .module-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .module-chip {
+            padding: 3px 10px;
+            background: var(--bg);
+            border-radius: 6px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .module-count {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .module-count strong {
+            color: var(--primary);
+        }
+
+        .start-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .start-btn:hover {
+            background: var(--primary-dark);
+            transform: translateX(3px);
+        }
+
+        .start-btn svg { width: 18px; height: 18px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .info-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .info-icon { font-size: 2rem; margin-bottom: 8px; }
+        .info-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+        .info-desc { font-size: 0.8rem; color: var(--text-muted); }
+
+        .footer {
+            text-align: center;
+            padding: 24px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .subjects-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </button>
+
+        <div class="hero-badge">📚 2nd Semester • Group B Theory</div>
+        <h1>🎓 B.Tech Module System</h1>
+        <p>Interactive study platform with progress tracking, practice questions, and complete topic coverage</p>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">📖 Subjects</h2>
+
+        <div class="subjects-grid">
+            <a href="subjects/mathematics-ii/index.html" class="subject-card">
+                <div class="card-top">
+                    <div class="subject-icon">📐</div>
+                    <span class="subject-code-badge">BS-M 201</span>
+                </div>
+                <h3 class="subject-title">Mathematics-II</h3>
+                <p class="subject-meta">Ordinary Differential Equations, Graph Theory, Laplace Transform, Complex Variable, Residue Theorem</p>
+                <div class="module-chips">
+                    <span class="module-chip">ODE</span>
+                    <span class="module-chip">Graph Theory</span>
+                    <span class="module-chip">Laplace</span>
+                    <span class="module-chip">Complex</span>
+                    <span class="module-chip">Residue</span>
+                </div>
+                <div class="card-footer">
+                    <span class="module-count"><strong>5</strong> Modules</span>
+                    <span class="start-btn">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <a href="subjects/physics-i/index.html" class="subject-card">
+                <div class="card-top">
+                    <div class="subject-icon">⚛️</div>
+                    <span class="subject-code-badge">BS-PH 201</span>
+                </div>
+                <h3 class="subject-title">Physics-I</h3>
+                <p class="subject-meta">Vector Calculus, Optics & Lasers, Statistical Mechanics, Quantum Mechanics, Dielectric & Magnetic Properties</p>
+                <div class="module-chips">
+                    <span class="module-chip">Vectors</span>
+                    <span class="module-chip">Optics</span>
+                    <span class="module-chip">Stat Mech</span>
+                    <span class="module-chip">Quantum</span>
+                    <span class="module-chip">Materials</span>
+                </div>
+                <div class="card-footer">
+                    <span class="module-count"><strong>5</strong> Modules</span>
+                    <span class="start-btn">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <a href="subjects/electrical-electronics/index.html" class="subject-card">
+                <div class="card-top">
+                    <div class="subject-icon">⚡</div>
+                    <span class="subject-code-badge">ES-EE 201</span>
+                </div>
+                <h3 class="subject-title">Basic Electrical & Electronics Engineering</h3>
+                <p class="subject-meta">Electromagnetism, Circuit Analysis, Transformers, Machines, BJT, FET, Op-Amp</p>
+                <div class="module-chips">
+                    <span class="module-chip">EM</span>
+                    <span class="module-chip">Circuits</span>
+                    <span class="module-chip">Transformers</span>
+                    <span class="module-chip">Machines</span>
+                    <span class="module-chip">BJT</span>
+                    <span class="module-chip">FET</span>
+                    <span class="module-chip">Op-Amp</span>
+                </div>
+                <div class="card-footer">
+                    <span class="module-count"><strong>7</strong> Modules</span>
+                    <span class="start-btn">
+                        Start Learning
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <h2 class="section-title">✨ Features</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">📱</div>
+                <div class="info-title">Works Offline</div>
+                <div class="info-desc">No internet needed after first load</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">💾</div>
+                <div class="info-title">Progress Saved</div>
+                <div class="info-desc">Auto-saves to your browser</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🌙</div>
+                <div class="info-title">Dark Mode</div>
+                <div class="info-desc">Easy on the eyes at night</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🖨️</div>
+                <div class="info-title">Print Ready</div>
+                <div class="info-desc">Export as PDF anytime</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🔍</div>
+                <div class="info-title">Smart Search</div>
+                <div class="info-desc">Find any topic instantly</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">📊</div>
+                <div class="info-title">Track Progress</div>
+                <div class="info-desc">Module-wise completion stats</div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>B.Tech Module Learning System • 2nd Semester Group B • WBSCTE/MAKAUT</p>
+        <p style="margin-top:4px;">Built for students, by students 💙</p>
+    </footer>
+
+    <script>
+        (function() {
+            const theme = localStorage.getItem('module-theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.querySelector('.sun-icon').style.display = 'none';
+                document.querySelector('.moon-icon').style.display = 'flex';
+            }
+
+            document.getElementById('themeToggle').addEventListener('click', function() {
+                const current = document.documentElement.getAttribute('data-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('module-theme', next);
+
+                const sunIcon = document.querySelector('.sun-icon');
+                const moonIcon = document.querySelector('.moon-icon');
+
+                if (next === 'dark') {
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'flex';
+                } else {
+                    sunIcon.style.display = 'flex';
+                    moonIcon.style.display = 'none';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

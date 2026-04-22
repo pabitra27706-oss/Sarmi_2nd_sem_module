@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10b981">
+    <meta name="description" content="Physics-I - B.Tech 2nd Semester - WBSCTE/MAKAUT">
+    
+    <title>Physics-I - B.Tech 2nd Semester</title>
+    
+    <!-- Favicon - Physics Icon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+    
+    <!-- Module System Styles -->
+    <link rel="stylesheet" href="../../module-assets/css/module-style.css">
+    
+    <!-- MathJax for Physics Equations -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                tags: 'ams',
+                packages: {'[+]': ['physics', 'ams', 'newcommand']}
+            },
+            svg: { 
+                fontCache: 'global',
+                displayAlign: 'left'
+            },
+            loader: {
+                load: ['[tex]/physics', '[tex]/ams']
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+
+    <!-- App Container -->
+    <div id="module-root"></div>
+
+    <!-- Module Configuration -->
+    <script>
+        const MODULE_CONFIG = {
+            // ==========================================
+            // SUBJECT INFORMATION
+            // ==========================================
+            subject: "Physics-I",
+            code: "physics-i",
+            subjectCode: "BS-PH 201",
+            
+            // ==========================================
+            // UNIVERSITY INFORMATION
+            // ==========================================
+            university: "WBSCTE",
+            course: "B.Tech",
+            branch: "All Branches",
+            year: 1,
+            semester: 2,
+            
+            // ==========================================
+            // MODULE CONFIGURATION
+            // ==========================================
+            modules: [1, 2, 3, 4, 5],
+            dataPath: "./data/",
+            
+            // ==========================================
+            // FEATURE FLAGS
+            // ==========================================
+            hasPYQ: true,
+            hasNotes: true,
+            hasVideos: true,       // Physics videos available
+            
+            // ==========================================
+            // MODULE DETAILS (Optional - for reference)
+            // ==========================================
+            moduleInfo: {
+                1: {
+                    name: "Vector Calculus, Oscillations & Waves",
+                    topics: "Gradient, Divergence, Curl, Vector Integration, Divergence & Stoke's Theorem, Simple Harmonic Oscillation, Damped Oscillations, Forced oscillation, Resonance, Quality factor, Bandwidth",
+                    marks: 20,
+                    hasLab: true
+                },
+                2: {
+                    name: "Optics & Lasers",
+                    topics: "Interference (wave front & amplitude), Newton's rings, Thin film Interference, Anti-reflection Coating, Diffraction (Fresnel & Fraunhofer), Single/Double/N-Slit Diffraction, Polarization (Brewster's law, Malus Law), Lasers (Einstein's coefficients, Gas/Solid state/Semiconductor lasers)",
+                    marks: 25,
+                    hasLab: true
+                },
+                3: {
+                    name: "Statistical Mechanics",
+                    topics: "Phase Space (μ & Γ), Macro states & Microstates, Density of States, Statistical Ensemble, Maxwell-Boltzmann statistics, Fermi-Dirac statistics, Bose-Einstein Statistics",
+                    marks: 18,
+                    hasLab: false
+                },
+                4: {
+                    name: "Quantum Mechanics",
+                    topics: "Blackbody Radiation, Stefan-Boltzmann law, Wein's displacement law, Rayleigh-Jeans law, Planck's Radiation law, Compton Effect, De Broglie hypothesis, Heisenberg's Uncertainty Principle, Wave function, Schrodinger's equation, Particle in 1D & 3D box, Degeneracy",
+                    marks: 22,
+                    hasLab: false
+                },
+                5: {
+                    name: "Dielectric & Magnetic Properties",
+                    topics: "Dielectric polarization (Electronic, Ionic, Orientational, Space charge), Dielectric loss, Loss tangent, Magnetic materials classification (Dia, Para, Ferro, Antiferro, Ferri), Curie temperature, Magnetic domain, Hysteresis, Hard & soft magnetic materials",
+                    marks: 20,
+                    hasLab: true
+                }
+            }
+        };
+    </script>
+
+    <!-- Module System Scripts -->
+    <script src="../../module-assets/js/module-helpers.js"></script>
+    <script src="../../module-assets/js/module-storage.js"></script>
+    <script src="../../module-assets/js/module-render.js"></script>
+    <script src="../../module-assets/js/module-app.js"></script>
+
+</body>
+</html>
