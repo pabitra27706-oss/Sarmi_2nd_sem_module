@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#6366f1">
-    <meta name="description" content="B.Tech 2nd Semester - Module Learning System">
+    <meta name="description" content="B.Tech 2nd Semester - Module Learning System - WBSCTE/MAKAUT">
     <title>B.Tech Semester 2 - Module Learning System</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+    <!-- ✅ PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- ✅ iOS PWA Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BTech Modules">
+
+    <!-- ✅ SVG Favicon (no file needed) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236366f1'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='50' font-weight='bold' fill='white'%3EB%3C/text%3E%3Ctext x='50' y='88' text-anchor='middle' font-size='22' fill='%23c7d2fe'%3ETECH%3C/text%3E%3C/svg%3E">
+
+    <!-- ✅ Apple Touch Icon (SVG data URI) -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='36' fill='%236366f1'/%3E%3Ctext x='90' y='110' text-anchor='middle' font-size='90' font-weight='bold' fill='white'%3EB%3C/text%3E%3Ctext x='90' y='150' text-anchor='middle' font-size='38' fill='%23c7d2fe'%3ETECH%3C/text%3E%3C/svg%3E">
+
     <style>
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
             --bg: #f8fafc;
             --text: #1e293b;
             --text-light: #64748b;
@@ -18,6 +33,7 @@
             --card-bg: #ffffff;
             --border: #e2e8f0;
             --shadow: 0 10px 30px rgba(0,0,0,0.12);
+            --success: #10b981;
         }
 
         [data-theme="dark"] {
@@ -40,6 +56,7 @@
             transition: background 0.3s ease, color 0.3s ease;
         }
 
+        /* ── Hero ── */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 60px 20px;
@@ -65,10 +82,16 @@
             backdrop-filter: blur(4px);
         }
 
-        .theme-toggle {
+        /* ── Header Actions ── */
+        .hero-actions {
             position: absolute;
             top: 20px;
             right: 20px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .hero-btn {
             width: 44px;
             height: 44px;
             border-radius: 12px;
@@ -79,13 +102,73 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s;
+            transition: background 0.2s, transform 0.2s;
             backdrop-filter: blur(4px);
+            position: relative;
         }
 
-        .theme-toggle:hover { background: rgba(255,255,255,0.25); }
-        .theme-toggle svg { width: 22px; height: 22px; }
+        .hero-btn:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-1px);
+        }
 
+        .hero-btn svg { width: 22px; height: 22px; }
+
+        .hero-btn .tooltip {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.75);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        .hero-btn:hover .tooltip { opacity: 1; }
+
+        /* ── PWA Install Banner (in hero) ── */
+        .pwa-hero-install {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .pwa-hero-install.visible {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pwa-install-hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(4px);
+            font-family: inherit;
+        }
+
+        .pwa-install-hero-btn:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.6);
+            transform: translateY(-2px);
+        }
+
+        .pwa-install-hero-btn svg { width: 20px; height: 20px; }
+
+        /* ── Container ── */
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -108,6 +191,7 @@
             background: var(--border);
         }
 
+        /* ── Subject Cards ── */
         .subjects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -126,6 +210,8 @@
             color: inherit;
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
 
         .subject-card:hover {
@@ -136,6 +222,38 @@
         [data-theme="dark"] .subject-card:hover {
             box-shadow: 0 15px 40px rgba(0,0,0,0.5);
         }
+
+        /* ✅ Cached indicator */
+        .cached-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--success);
+            display: none;
+            box-shadow: 0 0 0 3px rgba(16,185,129,0.2);
+        }
+
+        .cached-badge.visible { display: block; }
+
+        .cached-badge .cached-tooltip {
+            position: absolute;
+            top: -28px;
+            right: 0;
+            background: rgba(0,0,0,0.75);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        .subject-card:hover .cached-badge .cached-tooltip { opacity: 1; }
 
         .card-top {
             display: flex;
@@ -206,6 +324,33 @@
             color: var(--primary);
         }
 
+        /* ✅ Progress bar under module count */
+        .card-progress {
+            margin-top: 12px;
+            margin-bottom: -4px;
+        }
+
+        .card-progress-bar {
+            height: 4px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .card-progress-fill {
+            height: 100%;
+            background: var(--success);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .card-progress-text {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            text-align: right;
+        }
+
         .start-btn {
             display: inline-flex;
             align-items: center;
@@ -226,6 +371,7 @@
 
         .start-btn svg { width: 18px; height: 18px; }
 
+        /* ── Info Grid ── */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -239,12 +385,97 @@
             padding: 20px;
             border: 1px solid var(--border);
             text-align: center;
+            transition: transform 0.2s;
         }
+
+        .info-card:hover { transform: translateY(-3px); }
 
         .info-icon { font-size: 2rem; margin-bottom: 8px; }
         .info-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
         .info-desc { font-size: 0.8rem; color: var(--text-muted); }
 
+        /* ── PWA Status Section ── */
+        .pwa-status {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+            display: none;
+        }
+
+        .pwa-status.visible { display: block; }
+
+        .pwa-status-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .pwa-status-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pwa-status-badge {
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .pwa-status-badge.installed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .pwa-status-badge.online {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .pwa-status-badge.offline {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .pwa-cache-info {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .pwa-cache-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .pwa-clear-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .pwa-clear-btn:hover {
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        /* ── Footer ── */
         .footer {
             text-align: center;
             padding: 24px 20px;
@@ -253,41 +484,112 @@
             border-top: 1px solid var(--border);
         }
 
+        .footer-version {
+            margin-top: 6px;
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        /* ── Responsive ── */
         @media (max-width: 640px) {
             .hero h1 { font-size: 1.8rem; }
             .hero p { font-size: 1rem; }
             .subjects-grid { grid-template-columns: 1fr; }
             .info-grid { grid-template-columns: 1fr 1fr; }
+            .hero-actions { top: 12px; right: 12px; gap: 6px; }
+            .hero-btn { width: 38px; height: 38px; border-radius: 10px; }
+            .hero-btn svg { width: 18px; height: 18px; }
         }
     </style>
 </head>
 <body>
+
     <section class="hero">
-        <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
-            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-            </svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-            </svg>
-        </button>
+        <!-- ✅ Header Actions -->
+        <div class="hero-actions">
+            <button class="hero-btn" id="themeToggle" title="Toggle Dark Mode">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36
+                        18.36l1.42 1.42M1 12h2M21 12h2M4.22
+                        19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" style="display:none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3
+                        7 7 0 0 0 21 12.79z"/>
+                </svg>
+                <span class="tooltip">Theme</span>
+            </button>
+
+            <!-- ✅ Cache Info Button -->
+            <button class="hero-btn" id="cacheInfoBtn" title="App Info"
+                style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 16v-4M12 8h.01"/>
+                </svg>
+                <span class="tooltip">App Info</span>
+            </button>
+        </div>
 
         <div class="hero-badge">📚 2nd Semester • Group B Theory</div>
         <h1>🎓 B.Tech Module System</h1>
-        <p>Interactive study platform with progress tracking, practice questions, and complete topic coverage</p>
+        <p>Interactive study platform with progress tracking,
+           practice questions, and complete topic coverage</p>
+
+        <!-- ✅ PWA Install Button in Hero -->
+        <div class="pwa-hero-install" id="heroInstall">
+            <button class="pwa-install-hero-btn" id="heroInstallBtn">
+                <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Install App for Offline Use
+            </button>
+        </div>
     </section>
 
     <div class="container">
+
+        <!-- ✅ PWA Status Section -->
+        <div class="pwa-status" id="pwaStatus">
+            <div class="pwa-status-header">
+                <span class="pwa-status-title" id="pwaStatusTitle">
+                    📲 App Status
+                </span>
+                <span class="pwa-status-badge" id="pwaStatusBadge">
+                    Checking...
+                </span>
+            </div>
+            <div class="pwa-cache-info" id="pwaCacheInfo">
+                <span class="pwa-cache-item">Loading cache info...</span>
+            </div>
+        </div>
+
         <h2 class="section-title">📖 Subjects</h2>
 
         <div class="subjects-grid">
-            <a href="subjects/mathematics-ii/index.html" class="subject-card">
+
+            <!-- Mathematics-II -->
+            <a href="subjects/mathematics-ii/index.html" class="subject-card"
+                data-subject="mathematics-ii" data-modules="5">
+                <div class="cached-badge" id="cache-mathematics-ii">
+                    <span class="cached-tooltip">✅ Cached for offline</span>
+                </div>
                 <div class="card-top">
                     <div class="subject-icon">📐</div>
                     <span class="subject-code-badge">BS-M 201</span>
                 </div>
                 <h3 class="subject-title">Mathematics-II</h3>
-                <p class="subject-meta">Ordinary Differential Equations, Graph Theory, Laplace Transform, Complex Variable, Residue Theorem</p>
+                <p class="subject-meta">Ordinary Differential Equations,
+                    Graph Theory, Laplace Transform, Complex Variable,
+                    Residue Theorem</p>
                 <div class="module-chips">
                     <span class="module-chip">ODE</span>
                     <span class="module-chip">Graph Theory</span>
@@ -296,21 +598,39 @@
                     <span class="module-chip">Residue</span>
                 </div>
                 <div class="card-footer">
-                    <span class="module-count"><strong>5</strong> Modules</span>
+                    <span class="module-count">
+                        <strong>5</strong> Modules
+                    </span>
                     <span class="start-btn">
                         Start Learning
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
                     </span>
+                </div>
+                <div class="card-progress" data-subject-progress="mathematics-ii">
+                    <div class="card-progress-bar">
+                        <div class="card-progress-fill" style="width:0%"></div>
+                    </div>
+                    <div class="card-progress-text">0% complete</div>
                 </div>
             </a>
 
-            <a href="subjects/physics-i/index.html" class="subject-card">
+            <!-- Physics-I -->
+            <a href="subjects/physics-i/index.html" class="subject-card"
+                data-subject="physics-i" data-modules="5">
+                <div class="cached-badge" id="cache-physics-i">
+                    <span class="cached-tooltip">✅ Cached for offline</span>
+                </div>
                 <div class="card-top">
                     <div class="subject-icon">⚛️</div>
                     <span class="subject-code-badge">BS-PH 201</span>
                 </div>
                 <h3 class="subject-title">Physics-I</h3>
-                <p class="subject-meta">Vector Calculus, Optics & Lasers, Statistical Mechanics, Quantum Mechanics, Dielectric & Magnetic Properties</p>
+                <p class="subject-meta">Vector Calculus, Optics & Lasers,
+                    Statistical Mechanics, Quantum Mechanics,
+                    Dielectric & Magnetic Properties</p>
                 <div class="module-chips">
                     <span class="module-chip">Vectors</span>
                     <span class="module-chip">Optics</span>
@@ -319,21 +639,40 @@
                     <span class="module-chip">Materials</span>
                 </div>
                 <div class="card-footer">
-                    <span class="module-count"><strong>5</strong> Modules</span>
+                    <span class="module-count">
+                        <strong>5</strong> Modules
+                    </span>
                     <span class="start-btn">
                         Start Learning
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
                     </span>
+                </div>
+                <div class="card-progress" data-subject-progress="physics-i">
+                    <div class="card-progress-bar">
+                        <div class="card-progress-fill" style="width:0%"></div>
+                    </div>
+                    <div class="card-progress-text">0% complete</div>
                 </div>
             </a>
 
-            <a href="subjects/electrical-electronics/index.html" class="subject-card">
+            <!-- Electrical & Electronics -->
+            <a href="subjects/electrical-electronics/index.html"
+                class="subject-card"
+                data-subject="electrical-electronics" data-modules="7">
+                <div class="cached-badge" id="cache-electrical-electronics">
+                    <span class="cached-tooltip">✅ Cached for offline</span>
+                </div>
                 <div class="card-top">
                     <div class="subject-icon">⚡</div>
                     <span class="subject-code-badge">ES-EE 201</span>
                 </div>
-                <h3 class="subject-title">Basic Electrical & Electronics Engineering</h3>
-                <p class="subject-meta">Electromagnetism, Circuit Analysis, Transformers, Machines, BJT, FET, Op-Amp</p>
+                <h3 class="subject-title">Basic Electrical & Electronics
+                    Engineering</h3>
+                <p class="subject-meta">Electromagnetism, Circuit Analysis,
+                    Transformers, Machines, BJT, FET, Op-Amp</p>
                 <div class="module-chips">
                     <span class="module-chip">EM</span>
                     <span class="module-chip">Circuits</span>
@@ -344,22 +683,42 @@
                     <span class="module-chip">Op-Amp</span>
                 </div>
                 <div class="card-footer">
-                    <span class="module-count"><strong>7</strong> Modules</span>
+                    <span class="module-count">
+                        <strong>7</strong> Modules
+                    </span>
                     <span class="start-btn">
                         Start Learning
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
                     </span>
                 </div>
+                <div class="card-progress"
+                    data-subject-progress="electrical-electronics">
+                    <div class="card-progress-bar">
+                        <div class="card-progress-fill" style="width:0%"></div>
+                    </div>
+                    <div class="card-progress-text">0% complete</div>
+                </div>
             </a>
+
         </div>
 
         <h2 class="section-title">✨ Features</h2>
 
         <div class="info-grid">
             <div class="info-card">
+                <div class="info-icon">📲</div>
+                <div class="info-title">Install as App</div>
+                <div class="info-desc">Add to home screen,
+                    works like native app</div>
+            </div>
+            <div class="info-card">
                 <div class="info-icon">📱</div>
                 <div class="info-title">Works Offline</div>
-                <div class="info-desc">No internet needed after first load</div>
+                <div class="info-desc">No internet needed
+                    after first load</div>
             </div>
             <div class="info-card">
                 <div class="info-icon">💾</div>
@@ -386,41 +745,346 @@
                 <div class="info-title">Track Progress</div>
                 <div class="info-desc">Module-wise completion stats</div>
             </div>
+            <div class="info-card">
+                <div class="info-icon">🔄</div>
+                <div class="info-title">Auto Updates</div>
+                <div class="info-desc">New content loads
+                    automatically</div>
+            </div>
         </div>
     </div>
 
     <footer class="footer">
-        <p>B.Tech Module Learning System • 2nd Semester Group B • WBSCTE/MAKAUT</p>
-        <p style="margin-top:4px;">Built for students, by students 💙</p>
+        <p>B.Tech Module Learning System • 2nd Semester Group B
+            • WBSCTE/MAKAUT</p>
+        <p style="margin-top:4px;">
+            Built for students, by students 💙</p>
+        <p class="footer-version" id="footerVersion"></p>
     </footer>
 
-    <script>
-        (function() {
-            const theme = localStorage.getItem('module-theme') || 'light';
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                document.querySelector('.sun-icon').style.display = 'none';
-                document.querySelector('.moon-icon').style.display = 'flex';
-            }
+    <!-- ✅ PWA Manager -->
+    <script src="./module-assets/js/pwa-manager.js"></script>
 
-            document.getElementById('themeToggle').addEventListener('click', function() {
-                const current = document.documentElement.getAttribute('data-theme');
+    <script>
+    (function() {
+
+        // ════════════════════════════════
+        // THEME TOGGLE
+        // ════════════════════════════════
+
+        const theme = localStorage.getItem('module-theme') || 'light';
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.querySelector('.sun-icon').style.display = 'none';
+            document.querySelector('.moon-icon').style.display = 'flex';
+        }
+
+        document.getElementById('themeToggle')
+            .addEventListener('click', function() {
+                const current = document.documentElement
+                    .getAttribute('data-theme');
                 const next = current === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', next);
                 localStorage.setItem('module-theme', next);
 
-                const sunIcon = document.querySelector('.sun-icon');
+                const sunIcon  = document.querySelector('.sun-icon');
                 const moonIcon = document.querySelector('.moon-icon');
 
                 if (next === 'dark') {
-                    sunIcon.style.display = 'none';
+                    sunIcon.style.display  = 'none';
                     moonIcon.style.display = 'flex';
                 } else {
-                    sunIcon.style.display = 'flex';
+                    sunIcon.style.display  = 'flex';
                     moonIcon.style.display = 'none';
                 }
             });
-        })();
+
+        // ════════════════════════════════
+        // PROGRESS TRACKING ON HOME PAGE
+        // ════════════════════════════════
+
+        const subjects = {
+            'physics-i': {
+                code: 'physics-i',
+                modules: [1, 2, 3, 4, 5]
+            },
+            'mathematics-ii': {
+                code: 'mathematics-ii',
+                modules: [1, 2, 3, 4, 5]
+            },
+            'electrical-electronics': {
+                code: 'electrical-electronics',
+                modules: [1, 2, 3, 4, 5, 6, 7]
+            }
+        };
+
+        function loadSubjectProgress() {
+            const PREFIX = 'btech_module_';
+
+            Object.entries(subjects).forEach(([name, info]) => {
+                let totalTopics     = 0;
+                let completedTopics = 0;
+
+                info.modules.forEach(m => {
+                    const key  = `${PREFIX}${info.code}_module${m}`;
+                    const data = localStorage.getItem(key);
+
+                    if (data) {
+                        try {
+                            const parsed    = JSON.parse(data);
+                            const completed = parsed.completedTopics || [];
+                            completedTopics += completed.length;
+
+                            // Estimate total from completed + remaining
+                            totalTopics += Math.max(
+                                completed.length,
+                                Object.keys(parsed.userAnswers || {}).length,
+                                completed.length
+                            );
+                        } catch (e) {
+                            // Skip invalid data
+                        }
+                    }
+                });
+
+                // Update progress bar
+                const progressEl = document.querySelector(
+                    `[data-subject-progress="${name}"]`
+                );
+                if (progressEl && totalTopics > 0) {
+                    const pct = Math.min(
+                        100,
+                        Math.round((completedTopics / totalTopics) * 100)
+                    );
+                    const fill = progressEl.querySelector(
+                        '.card-progress-fill'
+                    );
+                    const text = progressEl.querySelector(
+                        '.card-progress-text'
+                    );
+
+                    if (fill) fill.style.width = `${pct}%`;
+                    if (text) text.textContent  = `${pct}% complete`;
+                } else if (progressEl) {
+                    const text = progressEl.querySelector(
+                        '.card-progress-text'
+                    );
+                    if (text) text.textContent = 'Not started';
+                }
+            });
+        }
+
+        loadSubjectProgress();
+
+        // ════════════════════════════════
+        // PWA INSTALL BUTTON IN HERO
+        // ════════════════════════════════
+
+        let deferredPrompt = null;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+
+            // Show hero install button
+            const heroInstall = document.getElementById('heroInstall');
+            if (heroInstall) heroInstall.classList.add('visible');
+        });
+
+        document.getElementById('heroInstallBtn')
+            ?.addEventListener('click', async () => {
+                if (!deferredPrompt) return;
+
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+
+                if (outcome === 'accepted') {
+                    deferredPrompt = null;
+                    const heroInstall = document.getElementById('heroInstall');
+                    if (heroInstall) heroInstall.classList.remove('visible');
+                }
+            });
+
+        window.addEventListener('appinstalled', () => {
+            deferredPrompt = null;
+            const heroInstall = document.getElementById('heroInstall');
+            if (heroInstall) heroInstall.classList.remove('visible');
+        });
+
+        // ════════════════════════════════
+        // PWA STATUS & CACHE INFO
+        // ════════════════════════════════
+
+        async function updatePWAStatus() {
+            const statusEl = document.getElementById('pwaStatus');
+            const infoBtn  = document.getElementById('cacheInfoBtn');
+
+            // Only show if SW is registered
+            if (!('serviceWorker' in navigator)) return;
+
+            const reg = await navigator.serviceWorker.getRegistration();
+            if (!reg) return;
+
+            // Show status section and info button
+            if (statusEl) statusEl.classList.add('visible');
+            if (infoBtn)  infoBtn.style.display = 'flex';
+
+            // Update status badge
+            const badge = document.getElementById('pwaStatusBadge');
+            const title = document.getElementById('pwaStatusTitle');
+
+            const isInstalled =
+                window.matchMedia('(display-mode: standalone)').matches ||
+                window.navigator.standalone === true;
+
+            if (isInstalled) {
+                if (badge) {
+                    badge.textContent = '✅ Installed';
+                    badge.className   = 'pwa-status-badge installed';
+                }
+                if (title) title.innerHTML = '📲 Installed App';
+            } else if (navigator.onLine) {
+                if (badge) {
+                    badge.textContent = '🟢 Online';
+                    badge.className   = 'pwa-status-badge online';
+                }
+                if (title) title.innerHTML = '📲 App Status';
+            } else {
+                if (badge) {
+                    badge.textContent = '🔴 Offline';
+                    badge.className   = 'pwa-status-badge offline';
+                }
+                if (title) title.innerHTML = '📲 App Status (Offline)';
+            }
+
+            // Get cache info
+            if (navigator.serviceWorker.controller) {
+                try {
+                    const channel = new MessageChannel();
+                    const promise = new Promise(resolve => {
+                        channel.port1.onmessage = (e) => resolve(e.data);
+                        // Timeout after 2 seconds
+                        setTimeout(() => resolve(null), 2000);
+                    });
+
+                    navigator.serviceWorker.controller.postMessage(
+                        { type: 'GET_CACHE_INFO' },
+                        [channel.port2]
+                    );
+
+                    const info = await promise;
+                    if (info) {
+                        updateCacheDisplay(info);
+
+                        // Update version in footer
+                        const versionEl =
+                            document.getElementById('footerVersion');
+                        if (versionEl && info.version) {
+                            versionEl.textContent =
+                                `App ${info.version}`;
+                        }
+                    }
+                } catch (e) {
+                    console.warn('Cache info failed:', e);
+                }
+            }
+
+            // Check cached subjects
+            checkCachedSubjects();
+        }
+
+        function updateCacheDisplay(info) {
+            const el = document.getElementById('pwaCacheInfo');
+            if (!el || !info) return;
+
+            el.innerHTML = `
+                <span class="pwa-cache-item">
+                    📦 ${info.totalFiles || 0} files cached
+                </span>
+                <span class="pwa-cache-item">
+                    💾 ${info.totalCaches || 0} cache stores
+                </span>
+                <span class="pwa-cache-item">
+                    🔖 ${info.version || 'Unknown'}
+                </span>
+                <button class="pwa-clear-btn" id="clearCacheBtn">
+                    🗑️ Clear Cache
+                </button>
+            `;
+
+            document.getElementById('clearCacheBtn')
+                ?.addEventListener('click', async () => {
+                    if (!confirm(
+                        'Clear all cached data? ' +
+                        'App will need internet to reload.'
+                    )) return;
+
+                    if (typeof PWAManager !== 'undefined') {
+                        await PWAManager.clearAllCache();
+                        window.location.reload();
+                    }
+                });
+        }
+
+        async function checkCachedSubjects() {
+            if (!('caches' in window)) return;
+
+            try {
+                const cacheNames = await caches.keys();
+                const dataCache  = cacheNames.find(
+                    n => n.includes('btech-data')
+                );
+
+                if (!dataCache) return;
+
+                const cache = await caches.open(dataCache);
+                const keys  = await cache.keys();
+                const urls  = keys.map(k => k.url);
+
+                // Check each subject
+                Object.keys(subjects).forEach(name => {
+                    const hasCached = urls.some(
+                        u => u.includes(`/subjects/${name}/data/`)
+                    );
+                    const badge = document.getElementById(`cache-${name}`);
+                    if (badge && hasCached) {
+                        badge.classList.add('visible');
+                    }
+                });
+            } catch (e) {
+                console.warn('Cache check failed:', e);
+            }
+        }
+
+        // Toggle PWA status on info button click
+        document.getElementById('cacheInfoBtn')
+            ?.addEventListener('click', () => {
+                const statusEl = document.getElementById('pwaStatus');
+                if (statusEl) {
+                    statusEl.classList.toggle('visible');
+                    if (statusEl.classList.contains('visible')) {
+                        updatePWAStatus();
+                        statusEl.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+
+        // Run after PWA manager loads
+        setTimeout(updatePWAStatus, 1500);
+
+        // Update on connectivity change
+        window.addEventListener('online',  () => {
+            setTimeout(updatePWAStatus, 500);
+        });
+        window.addEventListener('offline', () => {
+            setTimeout(updatePWAStatus, 500);
+        });
+
+    })();
     </script>
+
 </body>
 </html>
